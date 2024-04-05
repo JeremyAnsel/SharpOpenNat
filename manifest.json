@@ -1,0 +1,139 @@
+{
+  "source_base_path": "C:/projects/sharpopennat/SharpOpenNat/Documentation",
+  "xrefmap": "xrefmap.yml",
+  "files": [
+    {
+      "type": "Resource",
+      "output": {
+        "resource": {
+          "relative_path": "index.json"
+        }
+      }
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SharpOpenNat.Mapping.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SharpOpenNat.Mapping.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SharpOpenNat.MappingException.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SharpOpenNat.MappingException.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SharpOpenNat.NatDevice.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SharpOpenNat.NatDevice.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SharpOpenNat.NatDeviceNotFoundException.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SharpOpenNat.NatDeviceNotFoundException.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SharpOpenNat.NatDiscoverer.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SharpOpenNat.NatDiscoverer.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SharpOpenNat.PortMapper.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SharpOpenNat.PortMapper.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SharpOpenNat.Protocol.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SharpOpenNat.Protocol.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SharpOpenNat.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SharpOpenNat.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "api/index.md",
+      "output": {
+        ".html": {
+          "relative_path": "api/index.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Toc",
+      "source_relative_path": "api/toc.yml",
+      "output": {
+        ".json": {
+          "relative_path": "api/toc.json"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "index.md",
+      "output": {
+        ".html": {
+          "relative_path": "index.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Toc",
+      "source_relative_path": "toc.yml",
+      "output": {
+        ".json": {
+          "relative_path": "toc.json"
+        }
+      },
+      "version": ""
+    }
+  ],
+  "groups": [
+    {
+      "xrefmap": "xrefmap.yml"
+    }
+  ]
+}

@@ -1,0 +1,606 @@
+### YamlMime:XRefMap
+sorted: true
+references:
+- uid: SharpOpenNat
+  name: SharpOpenNat
+  href: api/SharpOpenNat.html
+  commentId: N:SharpOpenNat
+  fullName: SharpOpenNat
+  nameWithType: SharpOpenNat
+- uid: SharpOpenNat.Mapping
+  name: Mapping
+  href: api/SharpOpenNat.Mapping.html
+  commentId: T:SharpOpenNat.Mapping
+  fullName: SharpOpenNat.Mapping
+  nameWithType: Mapping
+- uid: SharpOpenNat.Mapping.#ctor(SharpOpenNat.Protocol,System.Int32,System.Int32)
+  name: Mapping(Protocol, int, int)
+  href: api/SharpOpenNat.Mapping.html#SharpOpenNat_Mapping__ctor_SharpOpenNat_Protocol_System_Int32_System_Int32_
+  commentId: M:SharpOpenNat.Mapping.#ctor(SharpOpenNat.Protocol,System.Int32,System.Int32)
+  name.vb: New(Protocol, Integer, Integer)
+  fullName: SharpOpenNat.Mapping.Mapping(SharpOpenNat.Protocol, int, int)
+  fullName.vb: SharpOpenNat.Mapping.New(SharpOpenNat.Protocol, Integer, Integer)
+  nameWithType: Mapping.Mapping(Protocol, int, int)
+  nameWithType.vb: Mapping.New(Protocol, Integer, Integer)
+- uid: SharpOpenNat.Mapping.#ctor(SharpOpenNat.Protocol,System.Int32,System.Int32,System.Int32,System.String)
+  name: Mapping(Protocol, int, int, int, string)
+  href: api/SharpOpenNat.Mapping.html#SharpOpenNat_Mapping__ctor_SharpOpenNat_Protocol_System_Int32_System_Int32_System_Int32_System_String_
+  commentId: M:SharpOpenNat.Mapping.#ctor(SharpOpenNat.Protocol,System.Int32,System.Int32,System.Int32,System.String)
+  name.vb: New(Protocol, Integer, Integer, Integer, String)
+  fullName: SharpOpenNat.Mapping.Mapping(SharpOpenNat.Protocol, int, int, int, string)
+  fullName.vb: SharpOpenNat.Mapping.New(SharpOpenNat.Protocol, Integer, Integer, Integer, String)
+  nameWithType: Mapping.Mapping(Protocol, int, int, int, string)
+  nameWithType.vb: Mapping.New(Protocol, Integer, Integer, Integer, String)
+- uid: SharpOpenNat.Mapping.#ctor(SharpOpenNat.Protocol,System.Int32,System.Int32,System.String)
+  name: Mapping(Protocol, int, int, string)
+  href: api/SharpOpenNat.Mapping.html#SharpOpenNat_Mapping__ctor_SharpOpenNat_Protocol_System_Int32_System_Int32_System_String_
+  commentId: M:SharpOpenNat.Mapping.#ctor(SharpOpenNat.Protocol,System.Int32,System.Int32,System.String)
+  name.vb: New(Protocol, Integer, Integer, String)
+  fullName: SharpOpenNat.Mapping.Mapping(SharpOpenNat.Protocol, int, int, string)
+  fullName.vb: SharpOpenNat.Mapping.New(SharpOpenNat.Protocol, Integer, Integer, String)
+  nameWithType: Mapping.Mapping(Protocol, int, int, string)
+  nameWithType.vb: Mapping.New(Protocol, Integer, Integer, String)
+- uid: SharpOpenNat.Mapping.#ctor(SharpOpenNat.Protocol,System.Net.IPAddress,System.Int32,System.Int32,System.Int32,System.String)
+  name: Mapping(Protocol, IPAddress, int, int, int, string)
+  href: api/SharpOpenNat.Mapping.html#SharpOpenNat_Mapping__ctor_SharpOpenNat_Protocol_System_Net_IPAddress_System_Int32_System_Int32_System_Int32_System_String_
+  commentId: M:SharpOpenNat.Mapping.#ctor(SharpOpenNat.Protocol,System.Net.IPAddress,System.Int32,System.Int32,System.Int32,System.String)
+  name.vb: New(Protocol, IPAddress, Integer, Integer, Integer, String)
+  fullName: SharpOpenNat.Mapping.Mapping(SharpOpenNat.Protocol, System.Net.IPAddress, int, int, int, string)
+  fullName.vb: SharpOpenNat.Mapping.New(SharpOpenNat.Protocol, System.Net.IPAddress, Integer, Integer, Integer, String)
+  nameWithType: Mapping.Mapping(Protocol, IPAddress, int, int, int, string)
+  nameWithType.vb: Mapping.New(Protocol, IPAddress, Integer, Integer, Integer, String)
+- uid: SharpOpenNat.Mapping.#ctor*
+  name: Mapping
+  href: api/SharpOpenNat.Mapping.html#SharpOpenNat_Mapping__ctor_
+  commentId: Overload:SharpOpenNat.Mapping.#ctor
+  isSpec: "True"
+  name.vb: New
+  fullName: SharpOpenNat.Mapping.Mapping
+  fullName.vb: SharpOpenNat.Mapping.New
+  nameWithType: Mapping.Mapping
+  nameWithType.vb: Mapping.New
+- uid: SharpOpenNat.Mapping.Description
+  name: Description
+  href: api/SharpOpenNat.Mapping.html#SharpOpenNat_Mapping_Description
+  commentId: P:SharpOpenNat.Mapping.Description
+  fullName: SharpOpenNat.Mapping.Description
+  nameWithType: Mapping.Description
+- uid: SharpOpenNat.Mapping.Description*
+  name: Description
+  href: api/SharpOpenNat.Mapping.html#SharpOpenNat_Mapping_Description_
+  commentId: Overload:SharpOpenNat.Mapping.Description
+  isSpec: "True"
+  fullName: SharpOpenNat.Mapping.Description
+  nameWithType: Mapping.Description
+- uid: SharpOpenNat.Mapping.Equals(System.Object)
+  name: Equals(object?)
+  href: api/SharpOpenNat.Mapping.html#SharpOpenNat_Mapping_Equals_System_Object_
+  commentId: M:SharpOpenNat.Mapping.Equals(System.Object)
+  name.vb: Equals(Object)
+  fullName: SharpOpenNat.Mapping.Equals(object?)
+  fullName.vb: SharpOpenNat.Mapping.Equals(Object)
+  nameWithType: Mapping.Equals(object?)
+  nameWithType.vb: Mapping.Equals(Object)
+- uid: SharpOpenNat.Mapping.Equals*
+  name: Equals
+  href: api/SharpOpenNat.Mapping.html#SharpOpenNat_Mapping_Equals_
+  commentId: Overload:SharpOpenNat.Mapping.Equals
+  isSpec: "True"
+  fullName: SharpOpenNat.Mapping.Equals
+  nameWithType: Mapping.Equals
+- uid: SharpOpenNat.Mapping.Expiration
+  name: Expiration
+  href: api/SharpOpenNat.Mapping.html#SharpOpenNat_Mapping_Expiration
+  commentId: P:SharpOpenNat.Mapping.Expiration
+  fullName: SharpOpenNat.Mapping.Expiration
+  nameWithType: Mapping.Expiration
+- uid: SharpOpenNat.Mapping.Expiration*
+  name: Expiration
+  href: api/SharpOpenNat.Mapping.html#SharpOpenNat_Mapping_Expiration_
+  commentId: Overload:SharpOpenNat.Mapping.Expiration
+  isSpec: "True"
+  fullName: SharpOpenNat.Mapping.Expiration
+  nameWithType: Mapping.Expiration
+- uid: SharpOpenNat.Mapping.GetHashCode
+  name: GetHashCode()
+  href: api/SharpOpenNat.Mapping.html#SharpOpenNat_Mapping_GetHashCode
+  commentId: M:SharpOpenNat.Mapping.GetHashCode
+  fullName: SharpOpenNat.Mapping.GetHashCode()
+  nameWithType: Mapping.GetHashCode()
+- uid: SharpOpenNat.Mapping.GetHashCode*
+  name: GetHashCode
+  href: api/SharpOpenNat.Mapping.html#SharpOpenNat_Mapping_GetHashCode_
+  commentId: Overload:SharpOpenNat.Mapping.GetHashCode
+  isSpec: "True"
+  fullName: SharpOpenNat.Mapping.GetHashCode
+  nameWithType: Mapping.GetHashCode
+- uid: SharpOpenNat.Mapping.IsExpired
+  name: IsExpired()
+  href: api/SharpOpenNat.Mapping.html#SharpOpenNat_Mapping_IsExpired
+  commentId: M:SharpOpenNat.Mapping.IsExpired
+  fullName: SharpOpenNat.Mapping.IsExpired()
+  nameWithType: Mapping.IsExpired()
+- uid: SharpOpenNat.Mapping.IsExpired*
+  name: IsExpired
+  href: api/SharpOpenNat.Mapping.html#SharpOpenNat_Mapping_IsExpired_
+  commentId: Overload:SharpOpenNat.Mapping.IsExpired
+  isSpec: "True"
+  fullName: SharpOpenNat.Mapping.IsExpired
+  nameWithType: Mapping.IsExpired
+- uid: SharpOpenNat.Mapping.Lifetime
+  name: Lifetime
+  href: api/SharpOpenNat.Mapping.html#SharpOpenNat_Mapping_Lifetime
+  commentId: P:SharpOpenNat.Mapping.Lifetime
+  fullName: SharpOpenNat.Mapping.Lifetime
+  nameWithType: Mapping.Lifetime
+- uid: SharpOpenNat.Mapping.Lifetime*
+  name: Lifetime
+  href: api/SharpOpenNat.Mapping.html#SharpOpenNat_Mapping_Lifetime_
+  commentId: Overload:SharpOpenNat.Mapping.Lifetime
+  isSpec: "True"
+  fullName: SharpOpenNat.Mapping.Lifetime
+  nameWithType: Mapping.Lifetime
+- uid: SharpOpenNat.Mapping.PrivateIP
+  name: PrivateIP
+  href: api/SharpOpenNat.Mapping.html#SharpOpenNat_Mapping_PrivateIP
+  commentId: P:SharpOpenNat.Mapping.PrivateIP
+  fullName: SharpOpenNat.Mapping.PrivateIP
+  nameWithType: Mapping.PrivateIP
+- uid: SharpOpenNat.Mapping.PrivateIP*
+  name: PrivateIP
+  href: api/SharpOpenNat.Mapping.html#SharpOpenNat_Mapping_PrivateIP_
+  commentId: Overload:SharpOpenNat.Mapping.PrivateIP
+  isSpec: "True"
+  fullName: SharpOpenNat.Mapping.PrivateIP
+  nameWithType: Mapping.PrivateIP
+- uid: SharpOpenNat.Mapping.PrivatePort
+  name: PrivatePort
+  href: api/SharpOpenNat.Mapping.html#SharpOpenNat_Mapping_PrivatePort
+  commentId: P:SharpOpenNat.Mapping.PrivatePort
+  fullName: SharpOpenNat.Mapping.PrivatePort
+  nameWithType: Mapping.PrivatePort
+- uid: SharpOpenNat.Mapping.PrivatePort*
+  name: PrivatePort
+  href: api/SharpOpenNat.Mapping.html#SharpOpenNat_Mapping_PrivatePort_
+  commentId: Overload:SharpOpenNat.Mapping.PrivatePort
+  isSpec: "True"
+  fullName: SharpOpenNat.Mapping.PrivatePort
+  nameWithType: Mapping.PrivatePort
+- uid: SharpOpenNat.Mapping.Protocol
+  name: Protocol
+  href: api/SharpOpenNat.Mapping.html#SharpOpenNat_Mapping_Protocol
+  commentId: P:SharpOpenNat.Mapping.Protocol
+  fullName: SharpOpenNat.Mapping.Protocol
+  nameWithType: Mapping.Protocol
+- uid: SharpOpenNat.Mapping.Protocol*
+  name: Protocol
+  href: api/SharpOpenNat.Mapping.html#SharpOpenNat_Mapping_Protocol_
+  commentId: Overload:SharpOpenNat.Mapping.Protocol
+  isSpec: "True"
+  fullName: SharpOpenNat.Mapping.Protocol
+  nameWithType: Mapping.Protocol
+- uid: SharpOpenNat.Mapping.PublicIP
+  name: PublicIP
+  href: api/SharpOpenNat.Mapping.html#SharpOpenNat_Mapping_PublicIP
+  commentId: P:SharpOpenNat.Mapping.PublicIP
+  fullName: SharpOpenNat.Mapping.PublicIP
+  nameWithType: Mapping.PublicIP
+- uid: SharpOpenNat.Mapping.PublicIP*
+  name: PublicIP
+  href: api/SharpOpenNat.Mapping.html#SharpOpenNat_Mapping_PublicIP_
+  commentId: Overload:SharpOpenNat.Mapping.PublicIP
+  isSpec: "True"
+  fullName: SharpOpenNat.Mapping.PublicIP
+  nameWithType: Mapping.PublicIP
+- uid: SharpOpenNat.Mapping.PublicPort
+  name: PublicPort
+  href: api/SharpOpenNat.Mapping.html#SharpOpenNat_Mapping_PublicPort
+  commentId: P:SharpOpenNat.Mapping.PublicPort
+  fullName: SharpOpenNat.Mapping.PublicPort
+  nameWithType: Mapping.PublicPort
+- uid: SharpOpenNat.Mapping.PublicPort*
+  name: PublicPort
+  href: api/SharpOpenNat.Mapping.html#SharpOpenNat_Mapping_PublicPort_
+  commentId: Overload:SharpOpenNat.Mapping.PublicPort
+  isSpec: "True"
+  fullName: SharpOpenNat.Mapping.PublicPort
+  nameWithType: Mapping.PublicPort
+- uid: SharpOpenNat.Mapping.ToString
+  name: ToString()
+  href: api/SharpOpenNat.Mapping.html#SharpOpenNat_Mapping_ToString
+  commentId: M:SharpOpenNat.Mapping.ToString
+  fullName: SharpOpenNat.Mapping.ToString()
+  nameWithType: Mapping.ToString()
+- uid: SharpOpenNat.Mapping.ToString*
+  name: ToString
+  href: api/SharpOpenNat.Mapping.html#SharpOpenNat_Mapping_ToString_
+  commentId: Overload:SharpOpenNat.Mapping.ToString
+  isSpec: "True"
+  fullName: SharpOpenNat.Mapping.ToString
+  nameWithType: Mapping.ToString
+- uid: SharpOpenNat.MappingException
+  name: MappingException
+  href: api/SharpOpenNat.MappingException.html
+  commentId: T:SharpOpenNat.MappingException
+  fullName: SharpOpenNat.MappingException
+  nameWithType: MappingException
+- uid: SharpOpenNat.MappingException.#ctor(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)
+  name: MappingException(SerializationInfo, StreamingContext)
+  href: api/SharpOpenNat.MappingException.html#SharpOpenNat_MappingException__ctor_System_Runtime_Serialization_SerializationInfo_System_Runtime_Serialization_StreamingContext_
+  commentId: M:SharpOpenNat.MappingException.#ctor(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)
+  name.vb: New(SerializationInfo, StreamingContext)
+  fullName: SharpOpenNat.MappingException.MappingException(System.Runtime.Serialization.SerializationInfo, System.Runtime.Serialization.StreamingContext)
+  fullName.vb: SharpOpenNat.MappingException.New(System.Runtime.Serialization.SerializationInfo, System.Runtime.Serialization.StreamingContext)
+  nameWithType: MappingException.MappingException(SerializationInfo, StreamingContext)
+  nameWithType.vb: MappingException.New(SerializationInfo, StreamingContext)
+- uid: SharpOpenNat.MappingException.#ctor*
+  name: MappingException
+  href: api/SharpOpenNat.MappingException.html#SharpOpenNat_MappingException__ctor_
+  commentId: Overload:SharpOpenNat.MappingException.#ctor
+  isSpec: "True"
+  name.vb: New
+  fullName: SharpOpenNat.MappingException.MappingException
+  fullName.vb: SharpOpenNat.MappingException.New
+  nameWithType: MappingException.MappingException
+  nameWithType.vb: MappingException.New
+- uid: SharpOpenNat.MappingException.ErrorCode
+  name: ErrorCode
+  href: api/SharpOpenNat.MappingException.html#SharpOpenNat_MappingException_ErrorCode
+  commentId: P:SharpOpenNat.MappingException.ErrorCode
+  fullName: SharpOpenNat.MappingException.ErrorCode
+  nameWithType: MappingException.ErrorCode
+- uid: SharpOpenNat.MappingException.ErrorCode*
+  name: ErrorCode
+  href: api/SharpOpenNat.MappingException.html#SharpOpenNat_MappingException_ErrorCode_
+  commentId: Overload:SharpOpenNat.MappingException.ErrorCode
+  isSpec: "True"
+  fullName: SharpOpenNat.MappingException.ErrorCode
+  nameWithType: MappingException.ErrorCode
+- uid: SharpOpenNat.MappingException.ErrorText
+  name: ErrorText
+  href: api/SharpOpenNat.MappingException.html#SharpOpenNat_MappingException_ErrorText
+  commentId: P:SharpOpenNat.MappingException.ErrorText
+  fullName: SharpOpenNat.MappingException.ErrorText
+  nameWithType: MappingException.ErrorText
+- uid: SharpOpenNat.MappingException.ErrorText*
+  name: ErrorText
+  href: api/SharpOpenNat.MappingException.html#SharpOpenNat_MappingException_ErrorText_
+  commentId: Overload:SharpOpenNat.MappingException.ErrorText
+  isSpec: "True"
+  fullName: SharpOpenNat.MappingException.ErrorText
+  nameWithType: MappingException.ErrorText
+- uid: SharpOpenNat.MappingException.GetObjectData(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)
+  name: GetObjectData(SerializationInfo, StreamingContext)
+  href: api/SharpOpenNat.MappingException.html#SharpOpenNat_MappingException_GetObjectData_System_Runtime_Serialization_SerializationInfo_System_Runtime_Serialization_StreamingContext_
+  commentId: M:SharpOpenNat.MappingException.GetObjectData(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)
+  fullName: SharpOpenNat.MappingException.GetObjectData(System.Runtime.Serialization.SerializationInfo, System.Runtime.Serialization.StreamingContext)
+  nameWithType: MappingException.GetObjectData(SerializationInfo, StreamingContext)
+- uid: SharpOpenNat.MappingException.GetObjectData*
+  name: GetObjectData
+  href: api/SharpOpenNat.MappingException.html#SharpOpenNat_MappingException_GetObjectData_
+  commentId: Overload:SharpOpenNat.MappingException.GetObjectData
+  isSpec: "True"
+  fullName: SharpOpenNat.MappingException.GetObjectData
+  nameWithType: MappingException.GetObjectData
+- uid: SharpOpenNat.NatDevice
+  name: NatDevice
+  href: api/SharpOpenNat.NatDevice.html
+  commentId: T:SharpOpenNat.NatDevice
+  fullName: SharpOpenNat.NatDevice
+  nameWithType: NatDevice
+- uid: SharpOpenNat.NatDevice.CreatePortMapAsync(SharpOpenNat.Mapping)
+  name: CreatePortMapAsync(Mapping)
+  href: api/SharpOpenNat.NatDevice.html#SharpOpenNat_NatDevice_CreatePortMapAsync_SharpOpenNat_Mapping_
+  commentId: M:SharpOpenNat.NatDevice.CreatePortMapAsync(SharpOpenNat.Mapping)
+  fullName: SharpOpenNat.NatDevice.CreatePortMapAsync(SharpOpenNat.Mapping)
+  nameWithType: NatDevice.CreatePortMapAsync(Mapping)
+- uid: SharpOpenNat.NatDevice.CreatePortMapAsync*
+  name: CreatePortMapAsync
+  href: api/SharpOpenNat.NatDevice.html#SharpOpenNat_NatDevice_CreatePortMapAsync_
+  commentId: Overload:SharpOpenNat.NatDevice.CreatePortMapAsync
+  isSpec: "True"
+  fullName: SharpOpenNat.NatDevice.CreatePortMapAsync
+  nameWithType: NatDevice.CreatePortMapAsync
+- uid: SharpOpenNat.NatDevice.DeletePortMapAsync(SharpOpenNat.Mapping)
+  name: DeletePortMapAsync(Mapping)
+  href: api/SharpOpenNat.NatDevice.html#SharpOpenNat_NatDevice_DeletePortMapAsync_SharpOpenNat_Mapping_
+  commentId: M:SharpOpenNat.NatDevice.DeletePortMapAsync(SharpOpenNat.Mapping)
+  fullName: SharpOpenNat.NatDevice.DeletePortMapAsync(SharpOpenNat.Mapping)
+  nameWithType: NatDevice.DeletePortMapAsync(Mapping)
+- uid: SharpOpenNat.NatDevice.DeletePortMapAsync*
+  name: DeletePortMapAsync
+  href: api/SharpOpenNat.NatDevice.html#SharpOpenNat_NatDevice_DeletePortMapAsync_
+  commentId: Overload:SharpOpenNat.NatDevice.DeletePortMapAsync
+  isSpec: "True"
+  fullName: SharpOpenNat.NatDevice.DeletePortMapAsync
+  nameWithType: NatDevice.DeletePortMapAsync
+- uid: SharpOpenNat.NatDevice.GetAllMappingsAsync
+  name: GetAllMappingsAsync()
+  href: api/SharpOpenNat.NatDevice.html#SharpOpenNat_NatDevice_GetAllMappingsAsync
+  commentId: M:SharpOpenNat.NatDevice.GetAllMappingsAsync
+  fullName: SharpOpenNat.NatDevice.GetAllMappingsAsync()
+  nameWithType: NatDevice.GetAllMappingsAsync()
+- uid: SharpOpenNat.NatDevice.GetAllMappingsAsync*
+  name: GetAllMappingsAsync
+  href: api/SharpOpenNat.NatDevice.html#SharpOpenNat_NatDevice_GetAllMappingsAsync_
+  commentId: Overload:SharpOpenNat.NatDevice.GetAllMappingsAsync
+  isSpec: "True"
+  fullName: SharpOpenNat.NatDevice.GetAllMappingsAsync
+  nameWithType: NatDevice.GetAllMappingsAsync
+- uid: SharpOpenNat.NatDevice.GetExternalIPAsync
+  name: GetExternalIPAsync()
+  href: api/SharpOpenNat.NatDevice.html#SharpOpenNat_NatDevice_GetExternalIPAsync
+  commentId: M:SharpOpenNat.NatDevice.GetExternalIPAsync
+  fullName: SharpOpenNat.NatDevice.GetExternalIPAsync()
+  nameWithType: NatDevice.GetExternalIPAsync()
+- uid: SharpOpenNat.NatDevice.GetExternalIPAsync*
+  name: GetExternalIPAsync
+  href: api/SharpOpenNat.NatDevice.html#SharpOpenNat_NatDevice_GetExternalIPAsync_
+  commentId: Overload:SharpOpenNat.NatDevice.GetExternalIPAsync
+  isSpec: "True"
+  fullName: SharpOpenNat.NatDevice.GetExternalIPAsync
+  nameWithType: NatDevice.GetExternalIPAsync
+- uid: SharpOpenNat.NatDevice.GetSpecificMappingAsync(SharpOpenNat.Protocol,System.Int32)
+  name: GetSpecificMappingAsync(Protocol, int)
+  href: api/SharpOpenNat.NatDevice.html#SharpOpenNat_NatDevice_GetSpecificMappingAsync_SharpOpenNat_Protocol_System_Int32_
+  commentId: M:SharpOpenNat.NatDevice.GetSpecificMappingAsync(SharpOpenNat.Protocol,System.Int32)
+  name.vb: GetSpecificMappingAsync(Protocol, Integer)
+  fullName: SharpOpenNat.NatDevice.GetSpecificMappingAsync(SharpOpenNat.Protocol, int)
+  fullName.vb: SharpOpenNat.NatDevice.GetSpecificMappingAsync(SharpOpenNat.Protocol, Integer)
+  nameWithType: NatDevice.GetSpecificMappingAsync(Protocol, int)
+  nameWithType.vb: NatDevice.GetSpecificMappingAsync(Protocol, Integer)
+- uid: SharpOpenNat.NatDevice.GetSpecificMappingAsync*
+  name: GetSpecificMappingAsync
+  href: api/SharpOpenNat.NatDevice.html#SharpOpenNat_NatDevice_GetSpecificMappingAsync_
+  commentId: Overload:SharpOpenNat.NatDevice.GetSpecificMappingAsync
+  isSpec: "True"
+  fullName: SharpOpenNat.NatDevice.GetSpecificMappingAsync
+  nameWithType: NatDevice.GetSpecificMappingAsync
+- uid: SharpOpenNat.NatDevice.HostEndPoint
+  name: HostEndPoint
+  href: api/SharpOpenNat.NatDevice.html#SharpOpenNat_NatDevice_HostEndPoint
+  commentId: P:SharpOpenNat.NatDevice.HostEndPoint
+  fullName: SharpOpenNat.NatDevice.HostEndPoint
+  nameWithType: NatDevice.HostEndPoint
+- uid: SharpOpenNat.NatDevice.HostEndPoint*
+  name: HostEndPoint
+  href: api/SharpOpenNat.NatDevice.html#SharpOpenNat_NatDevice_HostEndPoint_
+  commentId: Overload:SharpOpenNat.NatDevice.HostEndPoint
+  isSpec: "True"
+  fullName: SharpOpenNat.NatDevice.HostEndPoint
+  nameWithType: NatDevice.HostEndPoint
+- uid: SharpOpenNat.NatDevice.LastSeen
+  name: LastSeen
+  href: api/SharpOpenNat.NatDevice.html#SharpOpenNat_NatDevice_LastSeen
+  commentId: P:SharpOpenNat.NatDevice.LastSeen
+  fullName: SharpOpenNat.NatDevice.LastSeen
+  nameWithType: NatDevice.LastSeen
+- uid: SharpOpenNat.NatDevice.LastSeen*
+  name: LastSeen
+  href: api/SharpOpenNat.NatDevice.html#SharpOpenNat_NatDevice_LastSeen_
+  commentId: Overload:SharpOpenNat.NatDevice.LastSeen
+  isSpec: "True"
+  fullName: SharpOpenNat.NatDevice.LastSeen
+  nameWithType: NatDevice.LastSeen
+- uid: SharpOpenNat.NatDevice.LocalAddress
+  name: LocalAddress
+  href: api/SharpOpenNat.NatDevice.html#SharpOpenNat_NatDevice_LocalAddress
+  commentId: P:SharpOpenNat.NatDevice.LocalAddress
+  fullName: SharpOpenNat.NatDevice.LocalAddress
+  nameWithType: NatDevice.LocalAddress
+- uid: SharpOpenNat.NatDevice.LocalAddress*
+  name: LocalAddress
+  href: api/SharpOpenNat.NatDevice.html#SharpOpenNat_NatDevice_LocalAddress_
+  commentId: Overload:SharpOpenNat.NatDevice.LocalAddress
+  isSpec: "True"
+  fullName: SharpOpenNat.NatDevice.LocalAddress
+  nameWithType: NatDevice.LocalAddress
+- uid: SharpOpenNat.NatDevice.RegisterMapping(SharpOpenNat.Mapping)
+  name: RegisterMapping(Mapping)
+  href: api/SharpOpenNat.NatDevice.html#SharpOpenNat_NatDevice_RegisterMapping_SharpOpenNat_Mapping_
+  commentId: M:SharpOpenNat.NatDevice.RegisterMapping(SharpOpenNat.Mapping)
+  fullName: SharpOpenNat.NatDevice.RegisterMapping(SharpOpenNat.Mapping)
+  nameWithType: NatDevice.RegisterMapping(Mapping)
+- uid: SharpOpenNat.NatDevice.RegisterMapping*
+  name: RegisterMapping
+  href: api/SharpOpenNat.NatDevice.html#SharpOpenNat_NatDevice_RegisterMapping_
+  commentId: Overload:SharpOpenNat.NatDevice.RegisterMapping
+  isSpec: "True"
+  fullName: SharpOpenNat.NatDevice.RegisterMapping
+  nameWithType: NatDevice.RegisterMapping
+- uid: SharpOpenNat.NatDevice.UnregisterMapping(SharpOpenNat.Mapping)
+  name: UnregisterMapping(Mapping)
+  href: api/SharpOpenNat.NatDevice.html#SharpOpenNat_NatDevice_UnregisterMapping_SharpOpenNat_Mapping_
+  commentId: M:SharpOpenNat.NatDevice.UnregisterMapping(SharpOpenNat.Mapping)
+  fullName: SharpOpenNat.NatDevice.UnregisterMapping(SharpOpenNat.Mapping)
+  nameWithType: NatDevice.UnregisterMapping(Mapping)
+- uid: SharpOpenNat.NatDevice.UnregisterMapping*
+  name: UnregisterMapping
+  href: api/SharpOpenNat.NatDevice.html#SharpOpenNat_NatDevice_UnregisterMapping_
+  commentId: Overload:SharpOpenNat.NatDevice.UnregisterMapping
+  isSpec: "True"
+  fullName: SharpOpenNat.NatDevice.UnregisterMapping
+  nameWithType: NatDevice.UnregisterMapping
+- uid: SharpOpenNat.NatDeviceNotFoundException
+  name: NatDeviceNotFoundException
+  href: api/SharpOpenNat.NatDeviceNotFoundException.html
+  commentId: T:SharpOpenNat.NatDeviceNotFoundException
+  fullName: SharpOpenNat.NatDeviceNotFoundException
+  nameWithType: NatDeviceNotFoundException
+- uid: SharpOpenNat.NatDeviceNotFoundException.#ctor
+  name: NatDeviceNotFoundException()
+  href: api/SharpOpenNat.NatDeviceNotFoundException.html#SharpOpenNat_NatDeviceNotFoundException__ctor
+  commentId: M:SharpOpenNat.NatDeviceNotFoundException.#ctor
+  name.vb: New()
+  fullName: SharpOpenNat.NatDeviceNotFoundException.NatDeviceNotFoundException()
+  fullName.vb: SharpOpenNat.NatDeviceNotFoundException.New()
+  nameWithType: NatDeviceNotFoundException.NatDeviceNotFoundException()
+  nameWithType.vb: NatDeviceNotFoundException.New()
+- uid: SharpOpenNat.NatDeviceNotFoundException.#ctor(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)
+  name: NatDeviceNotFoundException(SerializationInfo, StreamingContext)
+  href: api/SharpOpenNat.NatDeviceNotFoundException.html#SharpOpenNat_NatDeviceNotFoundException__ctor_System_Runtime_Serialization_SerializationInfo_System_Runtime_Serialization_StreamingContext_
+  commentId: M:SharpOpenNat.NatDeviceNotFoundException.#ctor(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)
+  name.vb: New(SerializationInfo, StreamingContext)
+  fullName: SharpOpenNat.NatDeviceNotFoundException.NatDeviceNotFoundException(System.Runtime.Serialization.SerializationInfo, System.Runtime.Serialization.StreamingContext)
+  fullName.vb: SharpOpenNat.NatDeviceNotFoundException.New(System.Runtime.Serialization.SerializationInfo, System.Runtime.Serialization.StreamingContext)
+  nameWithType: NatDeviceNotFoundException.NatDeviceNotFoundException(SerializationInfo, StreamingContext)
+  nameWithType.vb: NatDeviceNotFoundException.New(SerializationInfo, StreamingContext)
+- uid: SharpOpenNat.NatDeviceNotFoundException.#ctor(System.String)
+  name: NatDeviceNotFoundException(string)
+  href: api/SharpOpenNat.NatDeviceNotFoundException.html#SharpOpenNat_NatDeviceNotFoundException__ctor_System_String_
+  commentId: M:SharpOpenNat.NatDeviceNotFoundException.#ctor(System.String)
+  name.vb: New(String)
+  fullName: SharpOpenNat.NatDeviceNotFoundException.NatDeviceNotFoundException(string)
+  fullName.vb: SharpOpenNat.NatDeviceNotFoundException.New(String)
+  nameWithType: NatDeviceNotFoundException.NatDeviceNotFoundException(string)
+  nameWithType.vb: NatDeviceNotFoundException.New(String)
+- uid: SharpOpenNat.NatDeviceNotFoundException.#ctor(System.String,System.Exception)
+  name: NatDeviceNotFoundException(string, Exception)
+  href: api/SharpOpenNat.NatDeviceNotFoundException.html#SharpOpenNat_NatDeviceNotFoundException__ctor_System_String_System_Exception_
+  commentId: M:SharpOpenNat.NatDeviceNotFoundException.#ctor(System.String,System.Exception)
+  name.vb: New(String, Exception)
+  fullName: SharpOpenNat.NatDeviceNotFoundException.NatDeviceNotFoundException(string, System.Exception)
+  fullName.vb: SharpOpenNat.NatDeviceNotFoundException.New(String, System.Exception)
+  nameWithType: NatDeviceNotFoundException.NatDeviceNotFoundException(string, Exception)
+  nameWithType.vb: NatDeviceNotFoundException.New(String, Exception)
+- uid: SharpOpenNat.NatDeviceNotFoundException.#ctor*
+  name: NatDeviceNotFoundException
+  href: api/SharpOpenNat.NatDeviceNotFoundException.html#SharpOpenNat_NatDeviceNotFoundException__ctor_
+  commentId: Overload:SharpOpenNat.NatDeviceNotFoundException.#ctor
+  isSpec: "True"
+  name.vb: New
+  fullName: SharpOpenNat.NatDeviceNotFoundException.NatDeviceNotFoundException
+  fullName.vb: SharpOpenNat.NatDeviceNotFoundException.New
+  nameWithType: NatDeviceNotFoundException.NatDeviceNotFoundException
+  nameWithType.vb: NatDeviceNotFoundException.New
+- uid: SharpOpenNat.NatDiscoverer
+  name: NatDiscoverer
+  href: api/SharpOpenNat.NatDiscoverer.html
+  commentId: T:SharpOpenNat.NatDiscoverer
+  fullName: SharpOpenNat.NatDiscoverer
+  nameWithType: NatDiscoverer
+- uid: SharpOpenNat.NatDiscoverer.DiscoverDeviceAsync
+  name: DiscoverDeviceAsync()
+  href: api/SharpOpenNat.NatDiscoverer.html#SharpOpenNat_NatDiscoverer_DiscoverDeviceAsync
+  commentId: M:SharpOpenNat.NatDiscoverer.DiscoverDeviceAsync
+  fullName: SharpOpenNat.NatDiscoverer.DiscoverDeviceAsync()
+  nameWithType: NatDiscoverer.DiscoverDeviceAsync()
+- uid: SharpOpenNat.NatDiscoverer.DiscoverDeviceAsync(SharpOpenNat.PortMapper,System.Threading.CancellationTokenSource)
+  name: DiscoverDeviceAsync(PortMapper, CancellationTokenSource)
+  href: api/SharpOpenNat.NatDiscoverer.html#SharpOpenNat_NatDiscoverer_DiscoverDeviceAsync_SharpOpenNat_PortMapper_System_Threading_CancellationTokenSource_
+  commentId: M:SharpOpenNat.NatDiscoverer.DiscoverDeviceAsync(SharpOpenNat.PortMapper,System.Threading.CancellationTokenSource)
+  fullName: SharpOpenNat.NatDiscoverer.DiscoverDeviceAsync(SharpOpenNat.PortMapper, System.Threading.CancellationTokenSource)
+  nameWithType: NatDiscoverer.DiscoverDeviceAsync(PortMapper, CancellationTokenSource)
+- uid: SharpOpenNat.NatDiscoverer.DiscoverDeviceAsync*
+  name: DiscoverDeviceAsync
+  href: api/SharpOpenNat.NatDiscoverer.html#SharpOpenNat_NatDiscoverer_DiscoverDeviceAsync_
+  commentId: Overload:SharpOpenNat.NatDiscoverer.DiscoverDeviceAsync
+  isSpec: "True"
+  fullName: SharpOpenNat.NatDiscoverer.DiscoverDeviceAsync
+  nameWithType: NatDiscoverer.DiscoverDeviceAsync
+- uid: SharpOpenNat.NatDiscoverer.DiscoverDevicesAsync(SharpOpenNat.PortMapper,System.Threading.CancellationTokenSource)
+  name: DiscoverDevicesAsync(PortMapper, CancellationTokenSource)
+  href: api/SharpOpenNat.NatDiscoverer.html#SharpOpenNat_NatDiscoverer_DiscoverDevicesAsync_SharpOpenNat_PortMapper_System_Threading_CancellationTokenSource_
+  commentId: M:SharpOpenNat.NatDiscoverer.DiscoverDevicesAsync(SharpOpenNat.PortMapper,System.Threading.CancellationTokenSource)
+  fullName: SharpOpenNat.NatDiscoverer.DiscoverDevicesAsync(SharpOpenNat.PortMapper, System.Threading.CancellationTokenSource)
+  nameWithType: NatDiscoverer.DiscoverDevicesAsync(PortMapper, CancellationTokenSource)
+- uid: SharpOpenNat.NatDiscoverer.DiscoverDevicesAsync*
+  name: DiscoverDevicesAsync
+  href: api/SharpOpenNat.NatDiscoverer.html#SharpOpenNat_NatDiscoverer_DiscoverDevicesAsync_
+  commentId: Overload:SharpOpenNat.NatDiscoverer.DiscoverDevicesAsync
+  isSpec: "True"
+  fullName: SharpOpenNat.NatDiscoverer.DiscoverDevicesAsync
+  nameWithType: NatDiscoverer.DiscoverDevicesAsync
+- uid: SharpOpenNat.NatDiscoverer.GetAvailablePort(System.Collections.Generic.IList{System.Int32},System.Int32)
+  name: GetAvailablePort(IList<int>, int)
+  href: api/SharpOpenNat.NatDiscoverer.html#SharpOpenNat_NatDiscoverer_GetAvailablePort_System_Collections_Generic_IList_System_Int32__System_Int32_
+  commentId: M:SharpOpenNat.NatDiscoverer.GetAvailablePort(System.Collections.Generic.IList{System.Int32},System.Int32)
+  name.vb: GetAvailablePort(IList(Of Integer), Integer)
+  fullName: SharpOpenNat.NatDiscoverer.GetAvailablePort(System.Collections.Generic.IList<int>, int)
+  fullName.vb: SharpOpenNat.NatDiscoverer.GetAvailablePort(System.Collections.Generic.IList(Of Integer), Integer)
+  nameWithType: NatDiscoverer.GetAvailablePort(IList<int>, int)
+  nameWithType.vb: NatDiscoverer.GetAvailablePort(IList(Of Integer), Integer)
+- uid: SharpOpenNat.NatDiscoverer.GetAvailablePort(System.Int32)
+  name: GetAvailablePort(int)
+  href: api/SharpOpenNat.NatDiscoverer.html#SharpOpenNat_NatDiscoverer_GetAvailablePort_System_Int32_
+  commentId: M:SharpOpenNat.NatDiscoverer.GetAvailablePort(System.Int32)
+  name.vb: GetAvailablePort(Integer)
+  fullName: SharpOpenNat.NatDiscoverer.GetAvailablePort(int)
+  fullName.vb: SharpOpenNat.NatDiscoverer.GetAvailablePort(Integer)
+  nameWithType: NatDiscoverer.GetAvailablePort(int)
+  nameWithType.vb: NatDiscoverer.GetAvailablePort(Integer)
+- uid: SharpOpenNat.NatDiscoverer.GetAvailablePort*
+  name: GetAvailablePort
+  href: api/SharpOpenNat.NatDiscoverer.html#SharpOpenNat_NatDiscoverer_GetAvailablePort_
+  commentId: Overload:SharpOpenNat.NatDiscoverer.GetAvailablePort
+  isSpec: "True"
+  fullName: SharpOpenNat.NatDiscoverer.GetAvailablePort
+  nameWithType: NatDiscoverer.GetAvailablePort
+- uid: SharpOpenNat.NatDiscoverer.GetUsedPorts
+  name: GetUsedPorts()
+  href: api/SharpOpenNat.NatDiscoverer.html#SharpOpenNat_NatDiscoverer_GetUsedPorts
+  commentId: M:SharpOpenNat.NatDiscoverer.GetUsedPorts
+  fullName: SharpOpenNat.NatDiscoverer.GetUsedPorts()
+  nameWithType: NatDiscoverer.GetUsedPorts()
+- uid: SharpOpenNat.NatDiscoverer.GetUsedPorts*
+  name: GetUsedPorts
+  href: api/SharpOpenNat.NatDiscoverer.html#SharpOpenNat_NatDiscoverer_GetUsedPorts_
+  commentId: Overload:SharpOpenNat.NatDiscoverer.GetUsedPorts
+  isSpec: "True"
+  fullName: SharpOpenNat.NatDiscoverer.GetUsedPorts
+  nameWithType: NatDiscoverer.GetUsedPorts
+- uid: SharpOpenNat.NatDiscoverer.ReleaseAll
+  name: ReleaseAll()
+  href: api/SharpOpenNat.NatDiscoverer.html#SharpOpenNat_NatDiscoverer_ReleaseAll
+  commentId: M:SharpOpenNat.NatDiscoverer.ReleaseAll
+  fullName: SharpOpenNat.NatDiscoverer.ReleaseAll()
+  nameWithType: NatDiscoverer.ReleaseAll()
+- uid: SharpOpenNat.NatDiscoverer.ReleaseAll*
+  name: ReleaseAll
+  href: api/SharpOpenNat.NatDiscoverer.html#SharpOpenNat_NatDiscoverer_ReleaseAll_
+  commentId: Overload:SharpOpenNat.NatDiscoverer.ReleaseAll
+  isSpec: "True"
+  fullName: SharpOpenNat.NatDiscoverer.ReleaseAll
+  nameWithType: NatDiscoverer.ReleaseAll
+- uid: SharpOpenNat.NatDiscoverer.TraceSource
+  name: TraceSource
+  href: api/SharpOpenNat.NatDiscoverer.html#SharpOpenNat_NatDiscoverer_TraceSource
+  commentId: F:SharpOpenNat.NatDiscoverer.TraceSource
+  fullName: SharpOpenNat.NatDiscoverer.TraceSource
+  nameWithType: NatDiscoverer.TraceSource
+- uid: SharpOpenNat.PortMapper
+  name: PortMapper
+  href: api/SharpOpenNat.PortMapper.html
+  commentId: T:SharpOpenNat.PortMapper
+  fullName: SharpOpenNat.PortMapper
+  nameWithType: PortMapper
+- uid: SharpOpenNat.PortMapper.Pmp
+  name: Pmp
+  href: api/SharpOpenNat.PortMapper.html#SharpOpenNat_PortMapper_Pmp
+  commentId: F:SharpOpenNat.PortMapper.Pmp
+  fullName: SharpOpenNat.PortMapper.Pmp
+  nameWithType: PortMapper.Pmp
+- uid: SharpOpenNat.PortMapper.Upnp
+  name: Upnp
+  href: api/SharpOpenNat.PortMapper.html#SharpOpenNat_PortMapper_Upnp
+  commentId: F:SharpOpenNat.PortMapper.Upnp
+  fullName: SharpOpenNat.PortMapper.Upnp
+  nameWithType: PortMapper.Upnp
+- uid: SharpOpenNat.Protocol
+  name: Protocol
+  href: api/SharpOpenNat.Protocol.html
+  commentId: T:SharpOpenNat.Protocol
+  fullName: SharpOpenNat.Protocol
+  nameWithType: Protocol
+- uid: SharpOpenNat.Protocol.Tcp
+  name: Tcp
+  href: api/SharpOpenNat.Protocol.html#SharpOpenNat_Protocol_Tcp
+  commentId: F:SharpOpenNat.Protocol.Tcp
+  fullName: SharpOpenNat.Protocol.Tcp
+  nameWithType: Protocol.Tcp
+- uid: SharpOpenNat.Protocol.Udp
+  name: Udp
+  href: api/SharpOpenNat.Protocol.html#SharpOpenNat_Protocol_Udp
+  commentId: F:SharpOpenNat.Protocol.Udp
+  fullName: SharpOpenNat.Protocol.Udp
+  nameWithType: Protocol.Udp
