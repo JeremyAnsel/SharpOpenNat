@@ -182,7 +182,9 @@ internal sealed class UpnpNatDevice : NatDevice
                  // DD-WRT Linux base router (and others probably) fails with 402-InvalidArgument when index is out of range
                  || e.ErrorCode == UpnpConstants.InvalidArguments
                  // LINKSYS WRT1900AC AC1900 it returns errocode 501-PAL_UPNP_SOAP_E_ACTION_FAILED
-                 || e.ErrorCode == UpnpConstants.ActionFailed)
+                 || e.ErrorCode == UpnpConstants.ActionFailed
+                 // LINKSYS EA8300 fails with 601:"Argument Value Out of Range" when index is out of range
+                 || e.ErrorCode == UpnpConstants.ArgumentValueOutOfRange)
                 {
                     NatDiscoverer.TraceSource.LogWarn("Router failed with {0}-{1}. No more mappings is assumed.", e.ErrorCode, e.ErrorText ?? string.Empty);
                     break;
@@ -228,7 +230,9 @@ internal sealed class UpnpNatDevice : NatDevice
              // DD-WRT Linux base router (and others probably) fails with 402-InvalidArgument when index is out of range
              || e.ErrorCode == UpnpConstants.InvalidArguments
              // LINKSYS WRT1900AC AC1900 it returns errocode 501-PAL_UPNP_SOAP_E_ACTION_FAILED
-             || e.ErrorCode == UpnpConstants.ActionFailed)
+             || e.ErrorCode == UpnpConstants.ActionFailed
+             // LINKSYS EA8300 fails with 601:"Argument Value Out of Range" when index is out of range
+             || e.ErrorCode == UpnpConstants.ArgumentValueOutOfRange)
             {
                 NatDiscoverer.TraceSource.LogWarn("Router failed with {0}-{1}. No more mappings is assumed.", e.ErrorCode, e.ErrorText ?? string.Empty);
                 return null;
