@@ -47,8 +47,15 @@ internal abstract class Searcher
                 NatDiscoverer.TraceSource.LogInfo("Searching for: {0}", GetType().Name);
                 while (!cancelationToken.IsCancellationRequested)
                 {
-                    Discover(cancelationToken);
-                    Receive(cancelationToken);
+                    try
+                    {
+                        Discover(cancelationToken);
+                        Receive(cancelationToken);
+                    }
+                    catch (Exception e)
+                    {
+                        NatDiscoverer.TraceSource.LogError(e.ToString());
+                    }
                 }
                 CloseUdpClients();
             }, null, cancelationToken);
