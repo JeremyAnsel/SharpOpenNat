@@ -39,7 +39,7 @@ public class Mapping
 {
     private DateTime _expiration;
     private int _lifetime;
-    internal MappingLifetime LifetimeType { get; set; }
+    public MappingLifetime LifetimeType { get; internal set; }
 
 
     /// <summary>

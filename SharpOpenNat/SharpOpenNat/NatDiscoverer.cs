@@ -1,71 +1,64 @@
-using System.Diagnostics;
+//
+// Authors:
+//   Alan McGovern alan.mcgovern@gmail.com
+//   Ben Motmans <ben.motmans@gmail.com>
+//   Lucas Ontivero lucasontivero@gmail.com
+//   Luigi Trabacchin <trabacchin.luigi@gmail.com>
+//
+// Copyright (C) 2006 Alan McGovern
+// Copyright (C) 2007 Ben Motmans
+// Copyright (C) 2014 Lucas Ontivero
+//
+// Permission is hereby granted, free of charge, to any person obtaining
+// a copy of this software and associated documentation files (the
+// "Software"), to deal in the Software without restriction, including
+// without limitation the rights to use, copy, modify, merge, publish,
+// distribute, sublicense, and/or sell copies of the Software, and to
+// permit persons to whom the Software is furnished to do so, subject to
+// the following conditions:
+// 
+// The above copyright notice and this permission notice shall be
+// included in all copies or substantial portions of the Software.
+// 
+// THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
+// EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
+// MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
+// NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE
+// LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION
+// OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION
+// WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+//
+
 using System.Net.Sockets;
 
 namespace SharpOpenNat;
 
-/// <summary>
-/// 
-/// </summary>
-public static class NatDiscoverer
+internal class NatDiscoverer : INatDiscoverer
 {
-    /// <summary>
-    /// The <see href="http://msdn.microsoft.com/en-us/library/vstudio/system.diagnostics.tracesource">TraceSource</see> instance
-    /// used for debugging and <see href="https://github.com/lontivero/Open.Nat/wiki/Troubleshooting">Troubleshooting</see>.
-    /// </summary>
-    /// <example>
-    /// NatUtility.TraceSource.Switch.Level = SourceLevels.Verbose;
-    /// NatUtility.TraceSource.Listeners.Add(new ConsoleListener());
-    /// </example>
-    /// <remarks>
-    /// At least one trace listener has to be added to the Listeners collection if a trace is required; if no listener is added
-    /// there will no be tracing to analyse.
-    /// </remarks>
-    /// <remarks>
-    /// SharpOpenNat only supports SourceLevels.Verbose, SourceLevels.Error, SourceLevels.Warning and SourceLevels.Information.
-    /// </remarks>
-    public readonly static TraceSource TraceSource = new("SharpOpenNat");
+    private readonly Dictionary<string, NatDevice> _devices = new();
 
-    private static readonly Dictionary<string, NatDevice> Devices = new();
+    private readonly Timer _renewTimer;
 
-    // Finalizer is never used however its destructor, that releases the open ports, is invoked by the
-    // process as part of the shuting down step. So, don't remove it!
-#pragma warning disable IDE0052
-    private static readonly Finalizer Finalizer = new();
-#pragma warning restore IDE0052
+    public NatDiscoverer()
+    {
+        _renewTimer = new(RenewMappings, null, 5000, 2000);
+    }
 
-    internal static readonly Timer RenewTimer = new(RenewMappings, null, 5000, 2000);
 
-    /// <summary>
-    /// Discovers and returns an UPnp or Pmp NAT device; otherwise a <see cref="NatDeviceNotFoundException">NatDeviceNotFoundException</see>
-    /// exception is thrown after 3 seconds. 
-    /// </summary>
-    /// <returns>A NAT device</returns>
-    /// <exception cref="NatDeviceNotFoundException">when no NAT found before 3 seconds.</exception>
-    public static async Task<NatDevice> DiscoverDeviceAsync()
+    public async Task<INatDevice> DiscoverDeviceAsync()
     {
         var cts = new CancellationTokenSource(3 * 1000);
         return await DiscoverDeviceAsync(PortMapper.Pmp | PortMapper.Upnp, cts);
     }
 
-    /// <summary>
-    /// Discovers and returns a NAT device for the specified type; otherwise a <see cref="NatDeviceNotFoundException">NatDeviceNotFoundException</see> 
-    /// exception is thrown when it is cancelled. 
-    /// </summary>
-    /// <remarks>
-    /// It allows to specify the NAT type to discover as well as the cancellation token in order.
-    /// </remarks>
-    /// <param name="portMapper">Port mapper protocol; Upnp, Pmp or both</param>
-    /// <param name="cancellationTokenSource">Cancellation token source for cancelling the discovery process</param>
-    /// <returns>A NAT device</returns>
-    /// <exception cref="NatDeviceNotFoundException">when no NAT found before cancellation</exception>
-    public static async Task<NatDevice> DiscoverDeviceAsync(PortMapper portMapper, CancellationTokenSource cancellationTokenSource)
+    public async Task<INatDevice> DiscoverDeviceAsync(PortMapper portMapper, CancellationTokenSource cancellationTokenSource)
     {
         Guard.IsTrue(portMapper.HasFlag(PortMapper.Upnp) || portMapper.HasFlag(PortMapper.Pmp), nameof(portMapper));
         Guard.IsNotNull(cancellationTokenSource, nameof(cancellationTokenSource));
 
         var devices = await DiscoverAsync(portMapper, false, cancellationTokenSource);
 
-        NatDevice? device = null;
+        INatDevice? device = null;
 
         foreach (var currentDevice in devices)
         {
@@ -82,22 +75,16 @@ public static class NatDiscoverer
 
         if (device is null)
         {
-            TraceSource.LogInfo("Device not found. Common reasons:");
-            TraceSource.LogInfo("\t* No device is present or,");
-            TraceSource.LogInfo("\t* Upnp is disabled in the router or");
-            TraceSource.LogInfo("\t* Antivirus software is filtering SSDP (discovery protocol).");
+            OpenNat.TraceSource.LogInfo("Device not found. Common reasons:");
+            OpenNat.TraceSource.LogInfo("\t* No device is present or,");
+            OpenNat.TraceSource.LogInfo("\t* Upnp is disabled in the router or");
+            OpenNat.TraceSource.LogInfo("\t* Antivirus software is filtering SSDP (discovery protocol).");
             throw new NatDeviceNotFoundException();
         }
         return device;
     }
 
-    /// <summary>
-    /// Discovers and returns all NAT devices for the specified type. If no NAT device is found it returns an empty enumerable
-    /// </summary>
-    /// <param name="portMapper">Port mapper protocol; Upnp, Pmp or both</param>
-    /// <param name="cancellationTokenSource">Cancellation token source for cancelling the discovery process</param>
-    /// <returns>All found NAT devices</returns>
-    public static async Task<IEnumerable<NatDevice>> DiscoverDevicesAsync(PortMapper portMapper, CancellationTokenSource cancellationTokenSource)
+    public async Task<IEnumerable<INatDevice>> DiscoverDevicesAsync(PortMapper portMapper, CancellationTokenSource cancellationTokenSource)
     {
         Guard.IsTrue(portMapper.HasFlag(PortMapper.Upnp) || portMapper.HasFlag(PortMapper.Pmp), nameof(portMapper));
         Guard.IsNotNull(cancellationTokenSource, nameof(cancellationTokenSource));
@@ -106,9 +93,9 @@ public static class NatDiscoverer
         return devices.ToArray();
     }
 
-    private static async Task<IEnumerable<NatDevice>> DiscoverAsync(PortMapper portMapper, bool onlyOne, CancellationTokenSource cts)
+    private async Task<IEnumerable<INatDevice>> DiscoverAsync(PortMapper portMapper, bool onlyOne, CancellationTokenSource cts)
     {
-        TraceSource.LogInfo("Start Discovery");
+        OpenNat.TraceSource.LogInfo("Start Discovery");
         var searcherTasks = new List<Task<IEnumerable<NatDevice>>>();
         if (portMapper.HasFlag(PortMapper.Upnp))
         {
@@ -124,19 +111,19 @@ public static class NatDiscoverer
         }
 
         await Task.WhenAll(searcherTasks);
-        TraceSource.LogInfo("Stop Discovery");
+        OpenNat.TraceSource.LogInfo("Stop Discovery");
 
         var devices = searcherTasks.SelectMany(x => x.Result);
         foreach (var device in devices)
         {
             var key = device.ToString()!;
-            if (Devices.TryGetValue(key, out NatDevice? nat))
+            if (_devices.TryGetValue(key, out NatDevice? nat))
             {
                 nat.Touch();
             }
             else
             {
-                Devices.Add(key, device);
+                _devices.Add(key, device);
             }
         }
         return devices;
@@ -145,27 +132,27 @@ public static class NatDiscoverer
     /// <summary>
     /// Release all ports opened by SharpOpenNat. 
     /// </summary>
-    public static void ReleaseAll()
+    public void ReleaseAll()
     {
-        foreach (var device in Devices.Values)
+        foreach (var device in _devices.Values)
         {
             device.ReleaseAll();
         }
     }
 
-    internal static void ReleaseSessionMappings()
+    private void ReleaseSessionMappings()
     {
-        foreach (var device in Devices.Values)
+        foreach (var device in _devices.Values)
         {
             device.ReleaseSessionMappings();
         }
     }
 
-    private static void RenewMappings(object? state)
+    private void RenewMappings(object? state)
     {
         Task.Factory.StartNew(async () =>
         {
-            foreach (var device in Devices.Values)
+            foreach (var device in _devices.Values)
             {
                 await device.RenewMappings();
             }
@@ -177,7 +164,7 @@ public static class NatDiscoverer
     /// </summary>
     /// <param name="startingPort"></param>
     /// <returns></returns>
-    public static async Task<int> GetAvailablePort(int startingPort)
+    public async Task<int> GetAvailablePort(int startingPort)
     {
         var portArray = await GetUsedPorts();
 
@@ -198,7 +185,7 @@ public static class NatDiscoverer
     /// <param name="portArray"></param>
     /// <param name="startingPort"></param>
     /// <returns></returns>
-    public static int GetAvailablePort(IList<int> portArray, int startingPort)
+    public int GetAvailablePort(IList<int> portArray, int startingPort)
     {
         for (int i = startingPort; i < ushort.MaxValue; i++)
         {
@@ -215,7 +202,7 @@ public static class NatDiscoverer
     /// 
     /// </summary>
     /// <returns></returns>
-    public static async Task<List<int>> GetUsedPorts()
+    public async Task<List<int>> GetUsedPorts()
     {
         var cts = new CancellationTokenSource(3 * 1000);
         var device = await DiscoverDeviceAsync(PortMapper.Upnp | PortMapper.Pmp, cts);
@@ -231,5 +218,12 @@ public static class NatDiscoverer
         portArray.Sort();
 
         return portArray;
+    }
+
+    public void Dispose()
+    {
+        OpenNat.TraceSource.LogInfo("Closing ports opened in this session");
+        _renewTimer.Dispose();
+        ReleaseSessionMappings();
     }
 }

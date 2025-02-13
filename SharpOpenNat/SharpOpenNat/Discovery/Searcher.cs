@@ -44,7 +44,7 @@ internal abstract class Searcher
 
         await Task.Factory.StartNew(_ =>
             {
-                NatDiscoverer.TraceSource.LogInfo("Searching for: {0}", GetType().Name);
+                OpenNat.TraceSource.LogInfo("Searching for: {0}", GetType().Name);
                 while (!cancelationToken.IsCancellationRequested)
                 {
                     try
@@ -54,7 +54,7 @@ internal abstract class Searcher
                     }
                     catch (Exception e)
                     {
-                        NatDiscoverer.TraceSource.LogError(e.ToString());
+                        OpenNat.TraceSource.LogError(e.ToString());
                     }
                 }
                 CloseUdpClients();
@@ -74,8 +74,8 @@ internal abstract class Searcher
             }
             catch (Exception e)
             {
-                NatDiscoverer.TraceSource.LogError("Error searching {0} - Details:", GetType().Name);
-                NatDiscoverer.TraceSource.LogError(e.ToString());
+                OpenNat.TraceSource.LogError("Error searching {0} - Details:", GetType().Name);
+                OpenNat.TraceSource.LogError(e.ToString());
             }
         }
     }

@@ -45,7 +45,7 @@ internal class SoapClient
 
     public async Task<XmlDocument> InvokeAsync(string operationName, IDictionary<string, object> args)
     {
-        NatDiscoverer.TraceSource.TraceEvent(TraceEventType.Verbose, 0, "SOAPACTION: **{0}** url:{1}", operationName,
+        OpenNat.TraceSource.TraceEvent(TraceEventType.Verbose, 0, "SOAPACTION: **{0}** url:{1}", operationName,
                                              _url);
         byte[] messageBody = BuildMessageBody(operationName, args);
         HttpWebRequest request = BuildHttpWebRequest(operationName, messageBody);
@@ -91,7 +91,7 @@ internal class SoapClient
         }
         catch (WebException ex)
         {
-            NatDiscoverer.TraceSource.TraceEvent(TraceEventType.Verbose, 0, "WebException status: {0}", ex.Status);
+            OpenNat.TraceSource.TraceEvent(TraceEventType.Verbose, 0, "WebException status: {0}", ex.Status);
 
             // Even if the request "failed" we need to continue reading the response from the router
             response = ex.Response as HttpWebResponse;
@@ -157,7 +157,7 @@ internal class SoapClient
         {
             int code = Convert.ToInt32(node.GetXmlElementText("errorCode"), CultureInfo.InvariantCulture);
             string errorMessage = node.GetXmlElementText("errorDescription");
-            NatDiscoverer.TraceSource.LogWarn("Server failed with error: {0} - {1}", code, errorMessage);
+            OpenNat.TraceSource.LogWarn("Server failed with error: {0} - {1}", code, errorMessage);
             throw new MappingException(code, errorMessage);
         }
 

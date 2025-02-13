@@ -39,7 +39,7 @@ var t = Task.Run(async () =>
     //Console.WriteLine(1703 + " -> " + NatDiscoverer.GetAvailablePort(usedPorts, 1703));
 
     var cts = new CancellationTokenSource(5000);
-    var device = await NatDiscoverer.DiscoverDeviceAsync(PortMapper.Upnp, cts);
+    var device = await OpenNat.Discoverer.DiscoverDeviceAsync(PortMapper.Upnp, cts);
 
     var ip = await device.GetExternalIPAsync();
     Console.Write("\nYour IP: {0}", ip);
