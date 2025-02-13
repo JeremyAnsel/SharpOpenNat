@@ -113,18 +113,18 @@ references:
   commentId: T:SharpOpenNat.INatDiscoverer
   fullName: SharpOpenNat.INatDiscoverer
   nameWithType: INatDiscoverer
-- uid: SharpOpenNat.INatDiscoverer.DiscoverDeviceAsync
-  name: DiscoverDeviceAsync()
-  href: api/SharpOpenNat.INatDiscoverer.html#SharpOpenNat_INatDiscoverer_DiscoverDeviceAsync
-  commentId: M:SharpOpenNat.INatDiscoverer.DiscoverDeviceAsync
-  fullName: SharpOpenNat.INatDiscoverer.DiscoverDeviceAsync()
-  nameWithType: INatDiscoverer.DiscoverDeviceAsync()
-- uid: SharpOpenNat.INatDiscoverer.DiscoverDeviceAsync(SharpOpenNat.PortMapper,System.Threading.CancellationTokenSource)
-  name: DiscoverDeviceAsync(PortMapper, CancellationTokenSource)
-  href: api/SharpOpenNat.INatDiscoverer.html#SharpOpenNat_INatDiscoverer_DiscoverDeviceAsync_SharpOpenNat_PortMapper_System_Threading_CancellationTokenSource_
-  commentId: M:SharpOpenNat.INatDiscoverer.DiscoverDeviceAsync(SharpOpenNat.PortMapper,System.Threading.CancellationTokenSource)
-  fullName: SharpOpenNat.INatDiscoverer.DiscoverDeviceAsync(SharpOpenNat.PortMapper, System.Threading.CancellationTokenSource)
-  nameWithType: INatDiscoverer.DiscoverDeviceAsync(PortMapper, CancellationTokenSource)
+- uid: SharpOpenNat.INatDiscoverer.DiscoverDeviceAsync(SharpOpenNat.PortMapper,System.Threading.CancellationToken)
+  name: DiscoverDeviceAsync(PortMapper, CancellationToken)
+  href: api/SharpOpenNat.INatDiscoverer.html#SharpOpenNat_INatDiscoverer_DiscoverDeviceAsync_SharpOpenNat_PortMapper_System_Threading_CancellationToken_
+  commentId: M:SharpOpenNat.INatDiscoverer.DiscoverDeviceAsync(SharpOpenNat.PortMapper,System.Threading.CancellationToken)
+  fullName: SharpOpenNat.INatDiscoverer.DiscoverDeviceAsync(SharpOpenNat.PortMapper, System.Threading.CancellationToken)
+  nameWithType: INatDiscoverer.DiscoverDeviceAsync(PortMapper, CancellationToken)
+- uid: SharpOpenNat.INatDiscoverer.DiscoverDeviceAsync(System.Threading.CancellationToken)
+  name: DiscoverDeviceAsync(CancellationToken)
+  href: api/SharpOpenNat.INatDiscoverer.html#SharpOpenNat_INatDiscoverer_DiscoverDeviceAsync_System_Threading_CancellationToken_
+  commentId: M:SharpOpenNat.INatDiscoverer.DiscoverDeviceAsync(System.Threading.CancellationToken)
+  fullName: SharpOpenNat.INatDiscoverer.DiscoverDeviceAsync(System.Threading.CancellationToken)
+  nameWithType: INatDiscoverer.DiscoverDeviceAsync(CancellationToken)
 - uid: SharpOpenNat.INatDiscoverer.DiscoverDeviceAsync*
   name: DiscoverDeviceAsync
   href: api/SharpOpenNat.INatDiscoverer.html#SharpOpenNat_INatDiscoverer_DiscoverDeviceAsync_
@@ -132,12 +132,12 @@ references:
   isSpec: "True"
   fullName: SharpOpenNat.INatDiscoverer.DiscoverDeviceAsync
   nameWithType: INatDiscoverer.DiscoverDeviceAsync
-- uid: SharpOpenNat.INatDiscoverer.DiscoverDevicesAsync(SharpOpenNat.PortMapper,System.Threading.CancellationTokenSource)
-  name: DiscoverDevicesAsync(PortMapper, CancellationTokenSource)
-  href: api/SharpOpenNat.INatDiscoverer.html#SharpOpenNat_INatDiscoverer_DiscoverDevicesAsync_SharpOpenNat_PortMapper_System_Threading_CancellationTokenSource_
-  commentId: M:SharpOpenNat.INatDiscoverer.DiscoverDevicesAsync(SharpOpenNat.PortMapper,System.Threading.CancellationTokenSource)
-  fullName: SharpOpenNat.INatDiscoverer.DiscoverDevicesAsync(SharpOpenNat.PortMapper, System.Threading.CancellationTokenSource)
-  nameWithType: INatDiscoverer.DiscoverDevicesAsync(PortMapper, CancellationTokenSource)
+- uid: SharpOpenNat.INatDiscoverer.DiscoverDevicesAsync(SharpOpenNat.PortMapper,System.Threading.CancellationToken)
+  name: DiscoverDevicesAsync(PortMapper, CancellationToken)
+  href: api/SharpOpenNat.INatDiscoverer.html#SharpOpenNat_INatDiscoverer_DiscoverDevicesAsync_SharpOpenNat_PortMapper_System_Threading_CancellationToken_
+  commentId: M:SharpOpenNat.INatDiscoverer.DiscoverDevicesAsync(SharpOpenNat.PortMapper,System.Threading.CancellationToken)
+  fullName: SharpOpenNat.INatDiscoverer.DiscoverDevicesAsync(SharpOpenNat.PortMapper, System.Threading.CancellationToken)
+  nameWithType: INatDiscoverer.DiscoverDevicesAsync(PortMapper, CancellationToken)
 - uid: SharpOpenNat.INatDiscoverer.DiscoverDevicesAsync*
   name: DiscoverDevicesAsync
   href: api/SharpOpenNat.INatDiscoverer.html#SharpOpenNat_INatDiscoverer_DiscoverDevicesAsync_

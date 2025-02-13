@@ -156,21 +156,114 @@
 </h3>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/JeremyAnsel/SharpOpenNat/new/main/apiSpec/new?filename=SharpOpenNat_INatDiscoverer_DiscoverDeviceAsync.md&amp;value=---%0Auid%3A%20SharpOpenNat.INatDiscoverer.DiscoverDeviceAsync%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+    <a href="https://github.com/JeremyAnsel/SharpOpenNat/new/main/apiSpec/new?filename=SharpOpenNat_INatDiscoverer_DiscoverDeviceAsync_SharpOpenNat_PortMapper_System_Threading_CancellationToken_.md&amp;value=---%0Auid%3A%20SharpOpenNat.INatDiscoverer.DiscoverDeviceAsync(SharpOpenNat.PortMapper%2CSystem.Threading.CancellationToken)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/JeremyAnsel/SharpOpenNat/blob/main/SharpOpenNat/SharpOpenNat/INatDiscoverer.cs/#L29">View Source</a>
+  </span>
+  <a id="SharpOpenNat_INatDiscoverer_DiscoverDeviceAsync_" data-uid="SharpOpenNat.INatDiscoverer.DiscoverDeviceAsync*"></a>
+  <h4 id="SharpOpenNat_INatDiscoverer_DiscoverDeviceAsync_SharpOpenNat_PortMapper_System_Threading_CancellationToken_" data-uid="SharpOpenNat.INatDiscoverer.DiscoverDeviceAsync(SharpOpenNat.PortMapper,System.Threading.CancellationToken)">DiscoverDeviceAsync(PortMapper, CancellationToken)</h4>
+  <div class="markdown level1 summary"><p>Discovers and returns a NAT device for the specified type; otherwise a <a class="xref" href="SharpOpenNat.NatDeviceNotFoundException.html">NatDeviceNotFoundException</a>
+exception is thrown when it is cancelled.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">Task&lt;INatDevice&gt; DiscoverDeviceAsync(PortMapper portMapper, CancellationToken cancellationToken = default)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="SharpOpenNat.PortMapper.html">PortMapper</a></td>
+        <td><span class="parametername">portMapper</span></td>
+        <td><p>Port mapper protocol; Upnp, Pmp or both</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken">CancellationToken</a></td>
+        <td><span class="parametername">cancellationToken</span></td>
+        <td><p>Cancellation token for cancelling the discovery process</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;<a class="xref" href="SharpOpenNat.INatDevice.html">INatDevice</a>&gt;</td>
+        <td><p>A NAT device</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="SharpOpenNat_INatDiscoverer_DiscoverDeviceAsync_SharpOpenNat_PortMapper_System_Threading_CancellationToken__remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>It allows to specify the NAT type to discover as well as the cancellation token in order.</p>
+</div>
+  <h5 class="exceptions">Exceptions</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Condition</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="SharpOpenNat.NatDeviceNotFoundException.html">NatDeviceNotFoundException</a></td>
+        <td><p>when no NAT found before cancellation</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/JeremyAnsel/SharpOpenNat/new/main/apiSpec/new?filename=SharpOpenNat_INatDiscoverer_DiscoverDeviceAsync_System_Threading_CancellationToken_.md&amp;value=---%0Auid%3A%20SharpOpenNat.INatDiscoverer.DiscoverDeviceAsync(System.Threading.CancellationToken)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
   </span>
   <span class="small pull-right mobile-hide">
     <a href="https://github.com/JeremyAnsel/SharpOpenNat/blob/main/SharpOpenNat/SharpOpenNat/INatDiscoverer.cs/#L16">View Source</a>
   </span>
   <a id="SharpOpenNat_INatDiscoverer_DiscoverDeviceAsync_" data-uid="SharpOpenNat.INatDiscoverer.DiscoverDeviceAsync*"></a>
-  <h4 id="SharpOpenNat_INatDiscoverer_DiscoverDeviceAsync" data-uid="SharpOpenNat.INatDiscoverer.DiscoverDeviceAsync">DiscoverDeviceAsync()</h4>
+  <h4 id="SharpOpenNat_INatDiscoverer_DiscoverDeviceAsync_System_Threading_CancellationToken_" data-uid="SharpOpenNat.INatDiscoverer.DiscoverDeviceAsync(System.Threading.CancellationToken)">DiscoverDeviceAsync(CancellationToken)</h4>
   <div class="markdown level1 summary"><p>Discovers and returns an UPnp or Pmp NAT device; otherwise a <a class="xref" href="SharpOpenNat.NatDeviceNotFoundException.html">NatDeviceNotFoundException</a>
 exception is thrown after 3 seconds.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="declaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">Task&lt;INatDevice&gt; DiscoverDeviceAsync()</code></pre>
+    <pre><code class="lang-csharp hljs">Task&lt;INatDevice&gt; DiscoverDeviceAsync(CancellationToken cancellationToken = default)</code></pre>
   </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken">CancellationToken</a></td>
+        <td><span class="parametername">cancellationToken</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
   <h5 class="returns">Returns</h5>
   <table class="table table-bordered table-condensed">
     <thead>
@@ -205,95 +298,19 @@ exception is thrown after 3 seconds.</p>
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/JeremyAnsel/SharpOpenNat/new/main/apiSpec/new?filename=SharpOpenNat_INatDiscoverer_DiscoverDeviceAsync_SharpOpenNat_PortMapper_System_Threading_CancellationTokenSource_.md&amp;value=---%0Auid%3A%20SharpOpenNat.INatDiscoverer.DiscoverDeviceAsync(SharpOpenNat.PortMapper%2CSystem.Threading.CancellationTokenSource)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/JeremyAnsel/SharpOpenNat/blob/main/SharpOpenNat/SharpOpenNat/INatDiscoverer.cs/#L29">View Source</a>
-  </span>
-  <a id="SharpOpenNat_INatDiscoverer_DiscoverDeviceAsync_" data-uid="SharpOpenNat.INatDiscoverer.DiscoverDeviceAsync*"></a>
-  <h4 id="SharpOpenNat_INatDiscoverer_DiscoverDeviceAsync_SharpOpenNat_PortMapper_System_Threading_CancellationTokenSource_" data-uid="SharpOpenNat.INatDiscoverer.DiscoverDeviceAsync(SharpOpenNat.PortMapper,System.Threading.CancellationTokenSource)">DiscoverDeviceAsync(PortMapper, CancellationTokenSource)</h4>
-  <div class="markdown level1 summary"><p>Discovers and returns a NAT device for the specified type; otherwise a <a class="xref" href="SharpOpenNat.NatDeviceNotFoundException.html">NatDeviceNotFoundException</a>
-exception is thrown when it is cancelled.</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">Task&lt;INatDevice&gt; DiscoverDeviceAsync(PortMapper portMapper, CancellationTokenSource cancellationTokenSource)</code></pre>
-  </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="SharpOpenNat.PortMapper.html">PortMapper</a></td>
-        <td><span class="parametername">portMapper</span></td>
-        <td><p>Port mapper protocol; Upnp, Pmp or both</p>
-</td>
-      </tr>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.cancellationtokensource">CancellationTokenSource</a></td>
-        <td><span class="parametername">cancellationTokenSource</span></td>
-        <td><p>Cancellation token source for cancelling the discovery process</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;<a class="xref" href="SharpOpenNat.INatDevice.html">INatDevice</a>&gt;</td>
-        <td><p>A NAT device</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 id="SharpOpenNat_INatDiscoverer_DiscoverDeviceAsync_SharpOpenNat_PortMapper_System_Threading_CancellationTokenSource__remarks">Remarks</h5>
-  <div class="markdown level1 remarks"><p>It allows to specify the NAT type to discover as well as the cancellation token in order.</p>
-</div>
-  <h5 class="exceptions">Exceptions</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Condition</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="SharpOpenNat.NatDeviceNotFoundException.html">NatDeviceNotFoundException</a></td>
-        <td><p>when no NAT found before cancellation</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/JeremyAnsel/SharpOpenNat/new/main/apiSpec/new?filename=SharpOpenNat_INatDiscoverer_DiscoverDevicesAsync_SharpOpenNat_PortMapper_System_Threading_CancellationTokenSource_.md&amp;value=---%0Auid%3A%20SharpOpenNat.INatDiscoverer.DiscoverDevicesAsync(SharpOpenNat.PortMapper%2CSystem.Threading.CancellationTokenSource)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+    <a href="https://github.com/JeremyAnsel/SharpOpenNat/new/main/apiSpec/new?filename=SharpOpenNat_INatDiscoverer_DiscoverDevicesAsync_SharpOpenNat_PortMapper_System_Threading_CancellationToken_.md&amp;value=---%0Auid%3A%20SharpOpenNat.INatDiscoverer.DiscoverDevicesAsync(SharpOpenNat.PortMapper%2CSystem.Threading.CancellationToken)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
   </span>
   <span class="small pull-right mobile-hide">
     <a href="https://github.com/JeremyAnsel/SharpOpenNat/blob/main/SharpOpenNat/SharpOpenNat/INatDiscoverer.cs/#L37">View Source</a>
   </span>
   <a id="SharpOpenNat_INatDiscoverer_DiscoverDevicesAsync_" data-uid="SharpOpenNat.INatDiscoverer.DiscoverDevicesAsync*"></a>
-  <h4 id="SharpOpenNat_INatDiscoverer_DiscoverDevicesAsync_SharpOpenNat_PortMapper_System_Threading_CancellationTokenSource_" data-uid="SharpOpenNat.INatDiscoverer.DiscoverDevicesAsync(SharpOpenNat.PortMapper,System.Threading.CancellationTokenSource)">DiscoverDevicesAsync(PortMapper, CancellationTokenSource)</h4>
+  <h4 id="SharpOpenNat_INatDiscoverer_DiscoverDevicesAsync_SharpOpenNat_PortMapper_System_Threading_CancellationToken_" data-uid="SharpOpenNat.INatDiscoverer.DiscoverDevicesAsync(SharpOpenNat.PortMapper,System.Threading.CancellationToken)">DiscoverDevicesAsync(PortMapper, CancellationToken)</h4>
   <div class="markdown level1 summary"><p>Discovers and returns all NAT devices for the specified type. If no NAT device is found it returns an empty enumerable</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="declaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">Task&lt;IEnumerable&lt;INatDevice&gt;&gt; DiscoverDevicesAsync(PortMapper portMapper, CancellationTokenSource cancellationTokenSource)</code></pre>
+    <pre><code class="lang-csharp hljs">Task&lt;IEnumerable&lt;INatDevice&gt;&gt; DiscoverDevicesAsync(PortMapper portMapper, CancellationToken cancellationToken = default)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-condensed">
@@ -312,9 +329,9 @@ exception is thrown when it is cancelled.</p>
 </td>
       </tr>
       <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.cancellationtokensource">CancellationTokenSource</a></td>
-        <td><span class="parametername">cancellationTokenSource</span></td>
-        <td><p>Cancellation token source for cancelling the discovery process</p>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken">CancellationToken</a></td>
+        <td><span class="parametername">cancellationToken</span></td>
+        <td><p>Cancellation token for cancelling the discovery process</p>
 </td>
       </tr>
     </tbody>
