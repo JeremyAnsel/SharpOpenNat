@@ -39,6 +39,9 @@ public class Mapping
 {
     private DateTime _expiration;
     private int _lifetime;
+    /// <summary>
+    /// Gets the Lifetime of the mapping
+    /// </summary>
     public MappingLifetime LifetimeType { get; internal set; }
 
 
