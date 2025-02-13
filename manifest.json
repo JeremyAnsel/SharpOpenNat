@@ -12,6 +12,26 @@
     },
     {
       "type": "ManagedReference",
+      "source_relative_path": "api/SharpOpenNat.INatDevice.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SharpOpenNat.INatDevice.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SharpOpenNat.INatDiscoverer.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SharpOpenNat.INatDiscoverer.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
       "source_relative_path": "api/SharpOpenNat.Mapping.yml",
       "output": {
         ".html": {
@@ -32,10 +52,10 @@
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "api/SharpOpenNat.NatDevice.yml",
+      "source_relative_path": "api/SharpOpenNat.MappingLifetime.yml",
       "output": {
         ".html": {
-          "relative_path": "api/SharpOpenNat.NatDevice.html"
+          "relative_path": "api/SharpOpenNat.MappingLifetime.html"
         }
       },
       "version": ""
@@ -52,10 +72,10 @@
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "api/SharpOpenNat.NatDiscoverer.yml",
+      "source_relative_path": "api/SharpOpenNat.OpenNat.yml",
       "output": {
         ".html": {
-          "relative_path": "api/SharpOpenNat.NatDiscoverer.html"
+          "relative_path": "api/SharpOpenNat.OpenNat.html"
         }
       },
       "version": ""
