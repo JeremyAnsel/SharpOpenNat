@@ -45,13 +45,14 @@ internal class NatDiscoverer : INatDiscoverer
     }
 
 
-    public async Task<INatDevice> DiscoverDeviceAsync()
+    public async Task<INatDevice> DiscoverDeviceAsync(CancellationToken cancellationToken = default)
     {
-        var cts = new CancellationTokenSource(3 * 1000);
-        return await DiscoverDeviceAsync(PortMapper.Pmp | PortMapper.Upnp, cts);
+        using var cts = CancellationTokenSource.CreateLinkedTokenSource(cancellationToken);
+        cts.CancelAfter(3 * 1000);
+        return await DiscoverDeviceAsync(PortMapper.Pmp | PortMapper.Upnp, cts.Token);
     }
 
-    public async Task<INatDevice> DiscoverDeviceAsync(PortMapper portMapper, CancellationTokenSource cancellationTokenSource)
+    public async Task<INatDevice> DiscoverDeviceAsync(PortMapper portMapper, CancellationToken cancellationTokenSource = default)
     {
         Guard.IsTrue(portMapper.HasFlag(PortMapper.Upnp) || portMapper.HasFlag(PortMapper.Pmp), nameof(portMapper));
         Guard.IsNotNull(cancellationTokenSource, nameof(cancellationTokenSource));
@@ -84,7 +85,7 @@ internal class NatDiscoverer : INatDiscoverer
         return device;
     }
 
-    public async Task<IEnumerable<INatDevice>> DiscoverDevicesAsync(PortMapper portMapper, CancellationTokenSource cancellationTokenSource)
+    public async Task<IEnumerable<INatDevice>> DiscoverDevicesAsync(PortMapper portMapper, CancellationToken cancellationTokenSource = default)
     {
         Guard.IsTrue(portMapper.HasFlag(PortMapper.Upnp) || portMapper.HasFlag(PortMapper.Pmp), nameof(portMapper));
         Guard.IsNotNull(cancellationTokenSource, nameof(cancellationTokenSource));
@@ -93,24 +94,27 @@ internal class NatDiscoverer : INatDiscoverer
         return devices.ToArray();
     }
 
-    private async Task<IEnumerable<INatDevice>> DiscoverAsync(PortMapper portMapper, bool onlyOne, CancellationTokenSource cts)
+    private async Task<IEnumerable<INatDevice>> DiscoverAsync(PortMapper portMapper, bool onlyOne, CancellationToken cancellationToken)
     {
         OpenNat.TraceSource.LogInfo("Start Discovery");
         var searcherTasks = new List<Task<IEnumerable<NatDevice>>>();
-        if (portMapper.HasFlag(PortMapper.Upnp))
+        using (var cts = CancellationTokenSource.CreateLinkedTokenSource(cancellationToken))
         {
-            var upnpSearcher = new UpnpSearcher(new IPAddressesProvider());
-            upnpSearcher.DeviceFound += (sender, args) => { if (onlyOne) cts.Cancel(); };
-            searcherTasks.Add(upnpSearcher.Search(cts.Token));
-        }
-        if (portMapper.HasFlag(PortMapper.Pmp))
-        {
-            var pmpSearcher = new PmpSearcher(new IPAddressesProvider());
-            pmpSearcher.DeviceFound += (sender, args) => { if (onlyOne) cts.Cancel(); };
-            searcherTasks.Add(pmpSearcher.Search(cts.Token));
-        }
+            if (portMapper.HasFlag(PortMapper.Upnp))
+            {
+                var upnpSearcher = new UpnpSearcher(new IPAddressesProvider());
+                upnpSearcher.DeviceFound += (sender, args) => { if (onlyOne) cts.Cancel(); };
+                searcherTasks.Add(upnpSearcher.Search(cts.Token));
+            }
+            if (portMapper.HasFlag(PortMapper.Pmp))
+            {
+                var pmpSearcher = new PmpSearcher(new IPAddressesProvider());
+                pmpSearcher.DeviceFound += (sender, args) => { if (onlyOne) cts.Cancel(); };
+                searcherTasks.Add(pmpSearcher.Search(cts.Token));
+            }
 
-        await Task.WhenAll(searcherTasks);
+            await Task.WhenAll(searcherTasks);
+        }
         OpenNat.TraceSource.LogInfo("Stop Discovery");
 
         var devices = searcherTasks.SelectMany(x => x.Result);
@@ -163,10 +167,11 @@ internal class NatDiscoverer : INatDiscoverer
     /// 
     /// </summary>
     /// <param name="startingPort"></param>
+    /// <param name="cancellationToken"></param>
     /// <returns></returns>
-    public async Task<int> GetAvailablePort(int startingPort)
+    public async Task<int> GetAvailablePortAsync(int startingPort, CancellationToken cancellationToken = default)
     {
-        var portArray = await GetUsedPorts();
+        var portArray = await GetUsedPortsAsync(cancellationToken);
 
         for (int i = startingPort; i < ushort.MaxValue; i++)
         {
@@ -202,10 +207,11 @@ internal class NatDiscoverer : INatDiscoverer
     /// 
     /// </summary>
     /// <returns></returns>
-    public async Task<List<int>> GetUsedPorts()
+    public async Task<List<int>> GetUsedPortsAsync(CancellationToken cancellationToken = default)
     {
-        var cts = new CancellationTokenSource(3 * 1000);
-        var device = await DiscoverDeviceAsync(PortMapper.Upnp | PortMapper.Pmp, cts);
+        using var cts = CancellationTokenSource.CreateLinkedTokenSource(cancellationToken);
+        cts.CancelAfter(3 * 1000);
+        var device = await DiscoverDeviceAsync(PortMapper.Upnp | PortMapper.Pmp, cts.Token);
 
         var portArray = new List<int>();
 
