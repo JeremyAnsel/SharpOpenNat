@@ -42,9 +42,9 @@ internal class UpnpNatDeviceInfo
             IPEndPoint old = HostEndPoint;
             serviceControlUrl = u.PathAndQuery;
 
-            NatDiscoverer.TraceSource.LogInfo("{0}: Absolute URI detected. Host address is now: {1}", old,
+            OpenNat.TraceSource.LogInfo("{0}: Absolute URI detected. Host address is now: {1}", old,
                                               HostEndPoint);
-            NatDiscoverer.TraceSource.LogInfo("{0}: New control url: {1}", HostEndPoint, serviceControlUrl);
+            OpenNat.TraceSource.LogInfo("{0}: New control url: {1}", HostEndPoint, serviceControlUrl);
         }
 
         var builder = new UriBuilder("http", locationUri.Host, locationUri.Port);

@@ -155,19 +155,19 @@ internal class UpnpSearcher : Searcher
 
             if (!IsValidControllerService(serviceType))
             {
-                NatDiscoverer.TraceSource.LogWarn("Invalid controller service. Ignoring.");
+                OpenNat.TraceSource.LogWarn("Invalid controller service. Ignoring.");
 
                 return null;
             }
-            NatDiscoverer.TraceSource.LogInfo("UPnP Response: Router advertised a '{0}' service!!!", serviceType);
+            OpenNat.TraceSource.LogInfo("UPnP Response: Router advertised a '{0}' service!!!", serviceType);
 
             var location = message["Location"] ?? message["AL"];
             var locationUri = new Uri(location);
-            NatDiscoverer.TraceSource.LogInfo("Found device at: {0}", locationUri.ToString());
+            OpenNat.TraceSource.LogInfo("Found device at: {0}", locationUri.ToString());
 
             if (_devices.TryGetValue(locationUri, out NatDevice? value))
             {
-                NatDiscoverer.TraceSource.LogInfo("Already found - Ignored");
+                OpenNat.TraceSource.LogInfo("Already found - Ignored");
                 value.Touch();
                 return null;
             }
@@ -181,7 +181,7 @@ internal class UpnpSearcher : Searcher
             }
             _lastFetched[endpoint.Address] = DateTime.Now;
 
-            NatDiscoverer.TraceSource.LogInfo("{0}:{1}: Fetching service list", locationUri.Host, locationUri.Port);
+            OpenNat.TraceSource.LogInfo("{0}:{1}: Fetching service list", locationUri.Host, locationUri.Port);
 
             var deviceInfo = UpnpSearcher.BuildUpnpNatDeviceInfo(localAddress, locationUri);
 
@@ -198,14 +198,14 @@ internal class UpnpSearcher : Searcher
         }
         catch (Exception ex)
         {
-            NatDiscoverer.TraceSource.LogError("Unhandled exception when trying to decode a device's response. ");
-            NatDiscoverer.TraceSource.LogError("Report the issue in https://github.com/JeremyAnsel/SharpOpenNat/issues");
-            NatDiscoverer.TraceSource.LogError("Also copy and paste the following info:");
-            NatDiscoverer.TraceSource.LogError("-- beging ---------------------------------");
-            NatDiscoverer.TraceSource.LogError(ex.Message);
-            NatDiscoverer.TraceSource.LogError("Data string:");
-            NatDiscoverer.TraceSource.LogError(dataString ?? "No data available");
-            NatDiscoverer.TraceSource.LogError("-- end ------------------------------------");
+            OpenNat.TraceSource.LogError("Unhandled exception when trying to decode a device's response. ");
+            OpenNat.TraceSource.LogError("Report the issue in https://github.com/JeremyAnsel/SharpOpenNat/issues");
+            OpenNat.TraceSource.LogError("Also copy and paste the following info:");
+            OpenNat.TraceSource.LogError("-- beging ---------------------------------");
+            OpenNat.TraceSource.LogError(ex.Message);
+            OpenNat.TraceSource.LogError("Data string:");
+            OpenNat.TraceSource.LogError(dataString ?? "No data available");
+            OpenNat.TraceSource.LogError("-- end ------------------------------------");
         }
         return null;
     }
@@ -222,7 +222,7 @@ internal class UpnpSearcher : Searcher
 
     private static UpnpNatDeviceInfo BuildUpnpNatDeviceInfo(IPAddress localAddress, Uri location)
     {
-        NatDiscoverer.TraceSource.LogInfo("Found device at: {0}", location.ToString());
+        OpenNat.TraceSource.LogInfo("Found device at: {0}", location.ToString());
 
         var hostEndPoint = new IPEndPoint(IPAddress.Parse(location.Host), location.Port);
 
@@ -245,7 +245,7 @@ internal class UpnpSearcher : Searcher
 
             var xmldoc = ReadXmlResponse(response);
 
-            NatDiscoverer.TraceSource.LogInfo("{0}: Parsed services list", hostEndPoint);
+            OpenNat.TraceSource.LogInfo("{0}: Parsed services list", hostEndPoint);
 
             var ns = new XmlNamespaceManager(xmldoc.NameTable);
             ns.AddNamespace("ns", "urn:schemas-upnp-org:device-1-0");
@@ -262,12 +262,12 @@ internal class UpnpSearcher : Searcher
                         continue;
                     }
 
-                    NatDiscoverer.TraceSource.LogInfo("{0}: Found service: {1}", hostEndPoint, serviceType);
+                    OpenNat.TraceSource.LogInfo("{0}: Found service: {1}", hostEndPoint, serviceType);
 
                     var serviceControlUrl = service.GetXmlElementText("controlURL");
-                    NatDiscoverer.TraceSource.LogInfo("{0}: Found upnp service at: {1}", hostEndPoint, serviceControlUrl);
+                    OpenNat.TraceSource.LogInfo("{0}: Found upnp service at: {1}", hostEndPoint, serviceControlUrl);
 
-                    NatDiscoverer.TraceSource.LogInfo("{0}: Handshake Complete", hostEndPoint);
+                    OpenNat.TraceSource.LogInfo("{0}: Handshake Complete", hostEndPoint);
                     return new UpnpNatDeviceInfo(localAddress, location, serviceControlUrl, serviceType);
                 }
             }
@@ -277,12 +277,12 @@ internal class UpnpSearcher : Searcher
         catch (WebException ex)
         {
             // Just drop the connection, FIXME: Should i retry?
-            NatDiscoverer.TraceSource.LogError("{0}: Device denied the connection attempt: {1}", hostEndPoint, ex);
+            OpenNat.TraceSource.LogError("{0}: Device denied the connection attempt: {1}", hostEndPoint, ex);
             if (ex.InnerException is SocketException inner)
             {
-                NatDiscoverer.TraceSource.LogError("{0}: ErrorCode:{1}", hostEndPoint, inner.ErrorCode);
-                NatDiscoverer.TraceSource.LogError("Go to http://msdn.microsoft.com/en-us/library/system.net.sockets.socketerror.aspx");
-                NatDiscoverer.TraceSource.LogError("Usually this happens. Try resetting the device and try again. If you are in a VPN, disconnect and try again.");
+                OpenNat.TraceSource.LogError("{0}: ErrorCode:{1}", hostEndPoint, inner.ErrorCode);
+                OpenNat.TraceSource.LogError("Go to http://msdn.microsoft.com/en-us/library/system.net.sockets.socketerror.aspx");
+                OpenNat.TraceSource.LogError("Usually this happens. Try resetting the device and try again. If you are in a VPN, disconnect and try again.");
             }
             throw;
         }

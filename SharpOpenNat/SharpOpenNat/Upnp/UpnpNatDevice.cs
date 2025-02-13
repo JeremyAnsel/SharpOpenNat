@@ -56,7 +56,7 @@ internal sealed class UpnpNatDevice : NatDevice
 
     public override async Task<IPAddress?> GetExternalIPAsync()
     {
-        NatDiscoverer.TraceSource.LogInfo("GetExternalIPAsync - Getting external IP address");
+        OpenNat.TraceSource.LogInfo("GetExternalIPAsync - Getting external IP address");
         var message = new GetExternalIPAddressRequestMessage();
         var responseData = await _soapClient
             .InvokeAsync("GetExternalIPAddress", message.ToXml())
@@ -71,7 +71,7 @@ internal sealed class UpnpNatDevice : NatDevice
         Guard.IsNotNull(mapping, nameof(mapping));
         if (mapping.PrivateIP.Equals(IPAddress.None)) mapping.PrivateIP = DeviceInfo.LocalAddress;
 
-        NatDiscoverer.TraceSource.LogInfo("CreatePortMapAsync - Creating port mapping {0}", mapping);
+        OpenNat.TraceSource.LogInfo("CreatePortMapAsync - Creating port mapping {0}", mapping);
         bool retry = false;
         try
         {
@@ -86,27 +86,27 @@ internal sealed class UpnpNatDevice : NatDevice
             switch (me.ErrorCode)
             {
                 case UpnpConstants.OnlyPermanentLeasesSupported:
-                    NatDiscoverer.TraceSource.LogWarn("Only Permanent Leases Supported - There is no warranty it will be closed");
+                    OpenNat.TraceSource.LogWarn("Only Permanent Leases Supported - There is no warranty it will be closed");
                     mapping.Lifetime = 0;
                     // We create the mapping anyway. It must be released on shutdown.
                     mapping.LifetimeType = MappingLifetime.ForcedSession;
                     retry = true;
                     break;
                 case UpnpConstants.SamePortValuesRequired:
-                    NatDiscoverer.TraceSource.LogWarn("Same Port Values Required - Using internal port {0}", mapping.PrivatePort);
+                    OpenNat.TraceSource.LogWarn("Same Port Values Required - Using internal port {0}", mapping.PrivatePort);
                     mapping.PublicPort = mapping.PrivatePort;
                     retry = true;
                     break;
                 case UpnpConstants.RemoteHostOnlySupportsWildcard:
-                    NatDiscoverer.TraceSource.LogWarn("Remote Host Only Supports Wildcard");
+                    OpenNat.TraceSource.LogWarn("Remote Host Only Supports Wildcard");
                     mapping.PublicIP = IPAddress.None;
                     retry = true;
                     break;
                 case UpnpConstants.ExternalPortOnlySupportsWildcard:
-                    NatDiscoverer.TraceSource.LogWarn("External Port Only Supports Wildcard");
+                    OpenNat.TraceSource.LogWarn("External Port Only Supports Wildcard");
                     throw;
                 case UpnpConstants.ConflictInMappingEntry:
-                    NatDiscoverer.TraceSource.LogWarn("Conflict with an already existing mapping");
+                    OpenNat.TraceSource.LogWarn("Conflict with an already existing mapping");
                     throw;
 
                 default:
@@ -126,7 +126,7 @@ internal sealed class UpnpNatDevice : NatDevice
 
         if (mapping.PrivateIP.Equals(IPAddress.None)) mapping.PrivateIP = DeviceInfo.LocalAddress;
 
-        NatDiscoverer.TraceSource.LogInfo("DeletePortMapAsync - Deleteing port mapping {0}", mapping);
+        OpenNat.TraceSource.LogInfo("DeletePortMapAsync - Deleteing port mapping {0}", mapping);
 
         try
         {
@@ -147,7 +147,7 @@ internal sealed class UpnpNatDevice : NatDevice
         var index = 0;
         var mappings = new List<Mapping>();
 
-        NatDiscoverer.TraceSource.LogInfo("GetAllMappingsAsync - Getting all mappings");
+        OpenNat.TraceSource.LogInfo("GetAllMappingsAsync - Getting all mappings");
         while (true)
         {
             try
@@ -162,7 +162,7 @@ internal sealed class UpnpNatDevice : NatDevice
 
                 if (!IPAddress.TryParse(responseMessage.InternalClient, out IPAddress? internalClientIp))
                 {
-                    NatDiscoverer.TraceSource.LogWarn("InternalClient is not an IP address. Mapping ignored!");
+                    OpenNat.TraceSource.LogWarn("InternalClient is not an IP address. Mapping ignored!");
                     continue;
                 }
 
@@ -186,7 +186,7 @@ internal sealed class UpnpNatDevice : NatDevice
                  // LINKSYS EA8300 fails with 601:"Argument Value Out of Range" when index is out of range
                  || e.ErrorCode == UpnpConstants.ArgumentValueOutOfRange)
                 {
-                    NatDiscoverer.TraceSource.LogWarn("Router failed with {0}-{1}. No more mappings is assumed.", e.ErrorCode, e.ErrorText ?? string.Empty);
+                    OpenNat.TraceSource.LogWarn("Router failed with {0}-{1}. No more mappings is assumed.", e.ErrorCode, e.ErrorText ?? string.Empty);
                     break;
                 }
                 throw;
@@ -201,7 +201,7 @@ internal sealed class UpnpNatDevice : NatDevice
         Guard.IsTrue(protocol == Protocol.Tcp || protocol == Protocol.Udp, nameof(protocol));
         Guard.IsInRange(publicPort, 0, ushort.MaxValue, "port");
 
-        NatDiscoverer.TraceSource.LogInfo("GetSpecificMappingAsync - Getting mapping for protocol: {0} port: {1}", Enum.GetName(typeof(Protocol), protocol)!, publicPort);
+        OpenNat.TraceSource.LogInfo("GetSpecificMappingAsync - Getting mapping for protocol: {0} port: {1}", Enum.GetName(typeof(Protocol), protocol)!, publicPort);
 
         try
         {
@@ -213,7 +213,7 @@ internal sealed class UpnpNatDevice : NatDevice
             var messageResponse = new GetPortMappingEntryResponseMessage(responseData, DeviceInfo.ServiceType, false);
 
             if (messageResponse.Protocol != protocol)
-                NatDiscoverer.TraceSource.LogWarn("Router responded to a protocol {0} query with a protocol {1} answer, work around applied.", protocol, messageResponse.Protocol);
+                OpenNat.TraceSource.LogWarn("Router responded to a protocol {0} query with a protocol {1} answer, work around applied.", protocol, messageResponse.Protocol);
 
             return new Mapping(protocol
                 , IPAddress.Parse(messageResponse.InternalClient)
@@ -234,7 +234,7 @@ internal sealed class UpnpNatDevice : NatDevice
              // LINKSYS EA8300 fails with 601:"Argument Value Out of Range" when index is out of range
              || e.ErrorCode == UpnpConstants.ArgumentValueOutOfRange)
             {
-                NatDiscoverer.TraceSource.LogWarn("Router failed with {0}-{1}. No more mappings is assumed.", e.ErrorCode, e.ErrorText ?? string.Empty);
+                OpenNat.TraceSource.LogWarn("Router failed with {0}-{1}. No more mappings is assumed.", e.ErrorCode, e.ErrorText ?? string.Empty);
                 return null;
             }
 

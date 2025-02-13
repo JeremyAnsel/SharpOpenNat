@@ -30,7 +30,7 @@
 
 namespace SharpOpenNat;
 
-enum MappingLifetime
+public enum MappingLifetime
 {
     Permanent,
     Session,

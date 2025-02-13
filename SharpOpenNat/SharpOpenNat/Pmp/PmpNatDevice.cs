@@ -123,7 +123,7 @@ internal sealed class PmpNatDevice : NatDevice
                                            type,
                                            mapping.Protocol,
                                            mapping.PrivatePort);
-            NatDiscoverer.TraceSource.LogError(message);
+            OpenNat.TraceSource.LogError(message);
             var pmpException = e as MappingException;
             throw new MappingException(message, pmpException);
         }

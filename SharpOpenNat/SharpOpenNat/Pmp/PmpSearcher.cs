@@ -82,7 +82,7 @@ internal class PmpSearcher : Searcher
         }
         catch (Exception e)
         {
-            NatDiscoverer.TraceSource.LogError("There was a problem finding gateways: " + e);
+            OpenNat.TraceSource.LogError("There was a problem finding gateways: " + e);
             // NAT-PMP does not use multicast, so there isn't really a good fallback.
         }
     }
@@ -130,7 +130,7 @@ internal class PmpSearcher : Searcher
 
         int errorcode = IPAddress.NetworkToHostOrder(BitConverter.ToInt16(response, 2));
         if (errorcode != 0)
-            NatDiscoverer.TraceSource.LogError("Non zero error: {0}", errorcode);
+            OpenNat.TraceSource.LogError("Non zero error: {0}", errorcode);
 
         var publicIp = new IPAddress(new[] { response[8], response[9], response[10], response[11] });
         //NextSearch = DateTime.Now.AddMinutes(5);
