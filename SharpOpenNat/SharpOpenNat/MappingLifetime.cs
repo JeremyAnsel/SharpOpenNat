@@ -29,11 +29,25 @@
 //
 
 namespace SharpOpenNat;
-
+/// <summary>
+/// The kind of lifetime
+/// </summary>
 public enum MappingLifetime
 {
+    /// <summary>
+    /// A permanent mapping
+    /// </summary>
     Permanent,
+    /// <summary>
+    /// A mapping that last for the session duration
+    /// </summary>
     Session,
+    /// <summary>
+    /// A lifetime with a predetermined expiration
+    /// </summary>
     Manual,
+    /// <summary>
+    /// a session lifetime for routers that don't support permanent or manual
+    /// </summary>
     ForcedSession
 }
