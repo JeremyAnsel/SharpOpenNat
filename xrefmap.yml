@@ -7,18 +7,75 @@ references:
   commentId: N:SharpOpenNat
   fullName: SharpOpenNat
   nameWithType: SharpOpenNat
+- uid: SharpOpenNat.Extensions
+  name: Extensions
+  href: api/SharpOpenNat.Extensions.html
+  commentId: T:SharpOpenNat.Extensions
+  fullName: SharpOpenNat.Extensions
+  nameWithType: Extensions
+- uid: SharpOpenNat.Extensions.GetAvailablePortAsync(SharpOpenNat.INatDiscoverer,System.Int32,System.Threading.CancellationToken)
+  name: GetAvailablePortAsync(INatDiscoverer, int, CancellationToken)
+  href: api/SharpOpenNat.Extensions.html#SharpOpenNat_Extensions_GetAvailablePortAsync_SharpOpenNat_INatDiscoverer_System_Int32_System_Threading_CancellationToken_
+  commentId: M:SharpOpenNat.Extensions.GetAvailablePortAsync(SharpOpenNat.INatDiscoverer,System.Int32,System.Threading.CancellationToken)
+  name.vb: GetAvailablePortAsync(INatDiscoverer, Integer, CancellationToken)
+  fullName: SharpOpenNat.Extensions.GetAvailablePortAsync(SharpOpenNat.INatDiscoverer, int, System.Threading.CancellationToken)
+  fullName.vb: SharpOpenNat.Extensions.GetAvailablePortAsync(SharpOpenNat.INatDiscoverer, Integer, System.Threading.CancellationToken)
+  nameWithType: Extensions.GetAvailablePortAsync(INatDiscoverer, int, CancellationToken)
+  nameWithType.vb: Extensions.GetAvailablePortAsync(INatDiscoverer, Integer, CancellationToken)
+- uid: SharpOpenNat.Extensions.GetAvailablePortAsync*
+  name: GetAvailablePortAsync
+  href: api/SharpOpenNat.Extensions.html#SharpOpenNat_Extensions_GetAvailablePortAsync_
+  commentId: Overload:SharpOpenNat.Extensions.GetAvailablePortAsync
+  isSpec: "True"
+  fullName: SharpOpenNat.Extensions.GetAvailablePortAsync
+  nameWithType: Extensions.GetAvailablePortAsync
+- uid: SharpOpenNat.Extensions.GetAwailablePortAsync(SharpOpenNat.INatDevice,System.Int32,System.Threading.CancellationToken)
+  name: GetAwailablePortAsync(INatDevice, int, CancellationToken)
+  href: api/SharpOpenNat.Extensions.html#SharpOpenNat_Extensions_GetAwailablePortAsync_SharpOpenNat_INatDevice_System_Int32_System_Threading_CancellationToken_
+  commentId: M:SharpOpenNat.Extensions.GetAwailablePortAsync(SharpOpenNat.INatDevice,System.Int32,System.Threading.CancellationToken)
+  name.vb: GetAwailablePortAsync(INatDevice, Integer, CancellationToken)
+  fullName: SharpOpenNat.Extensions.GetAwailablePortAsync(SharpOpenNat.INatDevice, int, System.Threading.CancellationToken)
+  fullName.vb: SharpOpenNat.Extensions.GetAwailablePortAsync(SharpOpenNat.INatDevice, Integer, System.Threading.CancellationToken)
+  nameWithType: Extensions.GetAwailablePortAsync(INatDevice, int, CancellationToken)
+  nameWithType.vb: Extensions.GetAwailablePortAsync(INatDevice, Integer, CancellationToken)
+- uid: SharpOpenNat.Extensions.GetAwailablePortAsync*
+  name: GetAwailablePortAsync
+  href: api/SharpOpenNat.Extensions.html#SharpOpenNat_Extensions_GetAwailablePortAsync_
+  commentId: Overload:SharpOpenNat.Extensions.GetAwailablePortAsync
+  isSpec: "True"
+  fullName: SharpOpenNat.Extensions.GetAwailablePortAsync
+  nameWithType: Extensions.GetAwailablePortAsync
+- uid: SharpOpenNat.Extensions.GetUsedPortAsync(SharpOpenNat.INatDevice,System.Threading.CancellationToken)
+  name: GetUsedPortAsync(INatDevice, CancellationToken)
+  href: api/SharpOpenNat.Extensions.html#SharpOpenNat_Extensions_GetUsedPortAsync_SharpOpenNat_INatDevice_System_Threading_CancellationToken_
+  commentId: M:SharpOpenNat.Extensions.GetUsedPortAsync(SharpOpenNat.INatDevice,System.Threading.CancellationToken)
+  fullName: SharpOpenNat.Extensions.GetUsedPortAsync(SharpOpenNat.INatDevice, System.Threading.CancellationToken)
+  nameWithType: Extensions.GetUsedPortAsync(INatDevice, CancellationToken)
+- uid: SharpOpenNat.Extensions.GetUsedPortAsync(SharpOpenNat.INatDiscoverer,System.Threading.CancellationToken)
+  name: GetUsedPortAsync(INatDiscoverer, CancellationToken)
+  href: api/SharpOpenNat.Extensions.html#SharpOpenNat_Extensions_GetUsedPortAsync_SharpOpenNat_INatDiscoverer_System_Threading_CancellationToken_
+  commentId: M:SharpOpenNat.Extensions.GetUsedPortAsync(SharpOpenNat.INatDiscoverer,System.Threading.CancellationToken)
+  fullName: SharpOpenNat.Extensions.GetUsedPortAsync(SharpOpenNat.INatDiscoverer, System.Threading.CancellationToken)
+  nameWithType: Extensions.GetUsedPortAsync(INatDiscoverer, CancellationToken)
+- uid: SharpOpenNat.Extensions.GetUsedPortAsync*
+  name: GetUsedPortAsync
+  href: api/SharpOpenNat.Extensions.html#SharpOpenNat_Extensions_GetUsedPortAsync_
+  commentId: Overload:SharpOpenNat.Extensions.GetUsedPortAsync
+  isSpec: "True"
+  fullName: SharpOpenNat.Extensions.GetUsedPortAsync
+  nameWithType: Extensions.GetUsedPortAsync
 - uid: SharpOpenNat.INatDevice
   name: INatDevice
   href: api/SharpOpenNat.INatDevice.html
   commentId: T:SharpOpenNat.INatDevice
   fullName: SharpOpenNat.INatDevice
   nameWithType: INatDevice
-- uid: SharpOpenNat.INatDevice.CreatePortMapAsync(SharpOpenNat.Mapping)
-  name: CreatePortMapAsync(Mapping)
-  href: api/SharpOpenNat.INatDevice.html#SharpOpenNat_INatDevice_CreatePortMapAsync_SharpOpenNat_Mapping_
-  commentId: M:SharpOpenNat.INatDevice.CreatePortMapAsync(SharpOpenNat.Mapping)
-  fullName: SharpOpenNat.INatDevice.CreatePortMapAsync(SharpOpenNat.Mapping)
-  nameWithType: INatDevice.CreatePortMapAsync(Mapping)
+- uid: SharpOpenNat.INatDevice.CreatePortMapAsync(SharpOpenNat.Mapping,System.Threading.CancellationToken)
+  name: CreatePortMapAsync(Mapping, CancellationToken)
+  href: api/SharpOpenNat.INatDevice.html#SharpOpenNat_INatDevice_CreatePortMapAsync_SharpOpenNat_Mapping_System_Threading_CancellationToken_
+  commentId: M:SharpOpenNat.INatDevice.CreatePortMapAsync(SharpOpenNat.Mapping,System.Threading.CancellationToken)
+  fullName: SharpOpenNat.INatDevice.CreatePortMapAsync(SharpOpenNat.Mapping, System.Threading.CancellationToken)
+  nameWithType: INatDevice.CreatePortMapAsync(Mapping, CancellationToken)
 - uid: SharpOpenNat.INatDevice.CreatePortMapAsync*
   name: CreatePortMapAsync
   href: api/SharpOpenNat.INatDevice.html#SharpOpenNat_INatDevice_CreatePortMapAsync_
@@ -26,12 +83,12 @@ references:
   isSpec: "True"
   fullName: SharpOpenNat.INatDevice.CreatePortMapAsync
   nameWithType: INatDevice.CreatePortMapAsync
-- uid: SharpOpenNat.INatDevice.DeletePortMapAsync(SharpOpenNat.Mapping)
-  name: DeletePortMapAsync(Mapping)
-  href: api/SharpOpenNat.INatDevice.html#SharpOpenNat_INatDevice_DeletePortMapAsync_SharpOpenNat_Mapping_
-  commentId: M:SharpOpenNat.INatDevice.DeletePortMapAsync(SharpOpenNat.Mapping)
-  fullName: SharpOpenNat.INatDevice.DeletePortMapAsync(SharpOpenNat.Mapping)
-  nameWithType: INatDevice.DeletePortMapAsync(Mapping)
+- uid: SharpOpenNat.INatDevice.DeletePortMapAsync(SharpOpenNat.Mapping,System.Threading.CancellationToken)
+  name: DeletePortMapAsync(Mapping, CancellationToken)
+  href: api/SharpOpenNat.INatDevice.html#SharpOpenNat_INatDevice_DeletePortMapAsync_SharpOpenNat_Mapping_System_Threading_CancellationToken_
+  commentId: M:SharpOpenNat.INatDevice.DeletePortMapAsync(SharpOpenNat.Mapping,System.Threading.CancellationToken)
+  fullName: SharpOpenNat.INatDevice.DeletePortMapAsync(SharpOpenNat.Mapping, System.Threading.CancellationToken)
+  nameWithType: INatDevice.DeletePortMapAsync(Mapping, CancellationToken)
 - uid: SharpOpenNat.INatDevice.DeletePortMapAsync*
   name: DeletePortMapAsync
   href: api/SharpOpenNat.INatDevice.html#SharpOpenNat_INatDevice_DeletePortMapAsync_
@@ -39,12 +96,12 @@ references:
   isSpec: "True"
   fullName: SharpOpenNat.INatDevice.DeletePortMapAsync
   nameWithType: INatDevice.DeletePortMapAsync
-- uid: SharpOpenNat.INatDevice.GetAllMappingsAsync
-  name: GetAllMappingsAsync()
-  href: api/SharpOpenNat.INatDevice.html#SharpOpenNat_INatDevice_GetAllMappingsAsync
-  commentId: M:SharpOpenNat.INatDevice.GetAllMappingsAsync
-  fullName: SharpOpenNat.INatDevice.GetAllMappingsAsync()
-  nameWithType: INatDevice.GetAllMappingsAsync()
+- uid: SharpOpenNat.INatDevice.GetAllMappingsAsync(System.Threading.CancellationToken)
+  name: GetAllMappingsAsync(CancellationToken)
+  href: api/SharpOpenNat.INatDevice.html#SharpOpenNat_INatDevice_GetAllMappingsAsync_System_Threading_CancellationToken_
+  commentId: M:SharpOpenNat.INatDevice.GetAllMappingsAsync(System.Threading.CancellationToken)
+  fullName: SharpOpenNat.INatDevice.GetAllMappingsAsync(System.Threading.CancellationToken)
+  nameWithType: INatDevice.GetAllMappingsAsync(CancellationToken)
 - uid: SharpOpenNat.INatDevice.GetAllMappingsAsync*
   name: GetAllMappingsAsync
   href: api/SharpOpenNat.INatDevice.html#SharpOpenNat_INatDevice_GetAllMappingsAsync_
@@ -52,12 +109,12 @@ references:
   isSpec: "True"
   fullName: SharpOpenNat.INatDevice.GetAllMappingsAsync
   nameWithType: INatDevice.GetAllMappingsAsync
-- uid: SharpOpenNat.INatDevice.GetExternalIPAsync
-  name: GetExternalIPAsync()
-  href: api/SharpOpenNat.INatDevice.html#SharpOpenNat_INatDevice_GetExternalIPAsync
-  commentId: M:SharpOpenNat.INatDevice.GetExternalIPAsync
-  fullName: SharpOpenNat.INatDevice.GetExternalIPAsync()
-  nameWithType: INatDevice.GetExternalIPAsync()
+- uid: SharpOpenNat.INatDevice.GetExternalIPAsync(System.Threading.CancellationToken)
+  name: GetExternalIPAsync(CancellationToken)
+  href: api/SharpOpenNat.INatDevice.html#SharpOpenNat_INatDevice_GetExternalIPAsync_System_Threading_CancellationToken_
+  commentId: M:SharpOpenNat.INatDevice.GetExternalIPAsync(System.Threading.CancellationToken)
+  fullName: SharpOpenNat.INatDevice.GetExternalIPAsync(System.Threading.CancellationToken)
+  nameWithType: INatDevice.GetExternalIPAsync(CancellationToken)
 - uid: SharpOpenNat.INatDevice.GetExternalIPAsync*
   name: GetExternalIPAsync
   href: api/SharpOpenNat.INatDevice.html#SharpOpenNat_INatDevice_GetExternalIPAsync_
@@ -65,15 +122,15 @@ references:
   isSpec: "True"
   fullName: SharpOpenNat.INatDevice.GetExternalIPAsync
   nameWithType: INatDevice.GetExternalIPAsync
-- uid: SharpOpenNat.INatDevice.GetSpecificMappingAsync(SharpOpenNat.Protocol,System.Int32)
-  name: GetSpecificMappingAsync(Protocol, int)
-  href: api/SharpOpenNat.INatDevice.html#SharpOpenNat_INatDevice_GetSpecificMappingAsync_SharpOpenNat_Protocol_System_Int32_
-  commentId: M:SharpOpenNat.INatDevice.GetSpecificMappingAsync(SharpOpenNat.Protocol,System.Int32)
-  name.vb: GetSpecificMappingAsync(Protocol, Integer)
-  fullName: SharpOpenNat.INatDevice.GetSpecificMappingAsync(SharpOpenNat.Protocol, int)
-  fullName.vb: SharpOpenNat.INatDevice.GetSpecificMappingAsync(SharpOpenNat.Protocol, Integer)
-  nameWithType: INatDevice.GetSpecificMappingAsync(Protocol, int)
-  nameWithType.vb: INatDevice.GetSpecificMappingAsync(Protocol, Integer)
+- uid: SharpOpenNat.INatDevice.GetSpecificMappingAsync(SharpOpenNat.Protocol,System.Int32,System.Threading.CancellationToken)
+  name: GetSpecificMappingAsync(Protocol, int, CancellationToken)
+  href: api/SharpOpenNat.INatDevice.html#SharpOpenNat_INatDevice_GetSpecificMappingAsync_SharpOpenNat_Protocol_System_Int32_System_Threading_CancellationToken_
+  commentId: M:SharpOpenNat.INatDevice.GetSpecificMappingAsync(SharpOpenNat.Protocol,System.Int32,System.Threading.CancellationToken)
+  name.vb: GetSpecificMappingAsync(Protocol, Integer, CancellationToken)
+  fullName: SharpOpenNat.INatDevice.GetSpecificMappingAsync(SharpOpenNat.Protocol, int, System.Threading.CancellationToken)
+  fullName.vb: SharpOpenNat.INatDevice.GetSpecificMappingAsync(SharpOpenNat.Protocol, Integer, System.Threading.CancellationToken)
+  nameWithType: INatDevice.GetSpecificMappingAsync(Protocol, int, CancellationToken)
+  nameWithType.vb: INatDevice.GetSpecificMappingAsync(Protocol, Integer, CancellationToken)
 - uid: SharpOpenNat.INatDevice.GetSpecificMappingAsync*
   name: GetSpecificMappingAsync
   href: api/SharpOpenNat.INatDevice.html#SharpOpenNat_INatDevice_GetSpecificMappingAsync_

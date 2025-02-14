@@ -95,6 +95,9 @@
                       <a href="SharpOpenNat.html" title="SharpOpenNat" class="">SharpOpenNat</a>
 
                         <ul class="nav level2">
+                          <li class="">
+                            <a href="SharpOpenNat.Extensions.html" title="Extensions" class="">Extensions</a>
+                          </li>
                           <li class="active">
                             <a href="SharpOpenNat.INatDevice.html" title="INatDevice" class="active">INatDevice</a>
                           </li>
@@ -215,19 +218,19 @@ open (forward) ports, close ports and get the externa (visible) IP address.</p>
 </h3>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/JeremyAnsel/SharpOpenNat/new/main/apiSpec/new?filename=SharpOpenNat_INatDevice_CreatePortMapAsync_SharpOpenNat_Mapping_.md&amp;value=---%0Auid%3A%20SharpOpenNat.INatDevice.CreatePortMapAsync(SharpOpenNat.Mapping)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+    <a href="https://github.com/JeremyAnsel/SharpOpenNat/new/main/apiSpec/new?filename=SharpOpenNat_INatDevice_CreatePortMapAsync_SharpOpenNat_Mapping_System_Threading_CancellationToken_.md&amp;value=---%0Auid%3A%20SharpOpenNat.INatDevice.CreatePortMapAsync(SharpOpenNat.Mapping%2CSystem.Threading.CancellationToken)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/JeremyAnsel/SharpOpenNat/blob/main/SharpOpenNat/SharpOpenNat/INatDevice.cs/#L60">View Source</a>
+    <a href="https://github.com/JeremyAnsel/SharpOpenNat/blob/main/SharpOpenNat/SharpOpenNat/INatDevice.cs/#L61">View Source</a>
   </span>
   <a id="SharpOpenNat_INatDevice_CreatePortMapAsync_" data-uid="SharpOpenNat.INatDevice.CreatePortMapAsync*"></a>
-  <h4 id="SharpOpenNat_INatDevice_CreatePortMapAsync_SharpOpenNat_Mapping_" data-uid="SharpOpenNat.INatDevice.CreatePortMapAsync(SharpOpenNat.Mapping)">CreatePortMapAsync(Mapping)</h4>
+  <h4 id="SharpOpenNat_INatDevice_CreatePortMapAsync_SharpOpenNat_Mapping_System_Threading_CancellationToken_" data-uid="SharpOpenNat.INatDevice.CreatePortMapAsync(SharpOpenNat.Mapping,System.Threading.CancellationToken)">CreatePortMapAsync(Mapping, CancellationToken)</h4>
   <div class="markdown level1 summary"><p>Creates the port map asynchronous.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="declaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">Task CreatePortMapAsync(Mapping mapping)</code></pre>
+    <pre><code class="lang-csharp hljs">Task CreatePortMapAsync(Mapping mapping, CancellationToken cancellationToken = default)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-condensed">
@@ -244,6 +247,11 @@ open (forward) ports, close ports and get the externa (visible) IP address.</p>
         <td><span class="parametername">mapping</span></td>
         <td><p>The <a class="xref" href="SharpOpenNat.Mapping.html">Mapping</a> entry.</p>
 </td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken">CancellationToken</a></td>
+        <td><span class="parametername">cancellationToken</span></td>
+        <td></td>
       </tr>
     </tbody>
   </table>
@@ -262,7 +270,7 @@ open (forward) ports, close ports and get the externa (visible) IP address.</p>
       </tr>
     </tbody>
   </table>
-  <h5 id="SharpOpenNat_INatDevice_CreatePortMapAsync_SharpOpenNat_Mapping__examples">Examples</h5>
+  <h5 id="SharpOpenNat_INatDevice_CreatePortMapAsync_SharpOpenNat_Mapping_System_Threading_CancellationToken__examples">Examples</h5>
   <p>device.CreatePortMapAsync(new Mapping(Protocol.Tcp, 1700, 1600));</p>
 
   <h5 class="exceptions">Exceptions</h5>
@@ -283,19 +291,19 @@ open (forward) ports, close ports and get the externa (visible) IP address.</p>
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/JeremyAnsel/SharpOpenNat/new/main/apiSpec/new?filename=SharpOpenNat_INatDevice_DeletePortMapAsync_SharpOpenNat_Mapping_.md&amp;value=---%0Auid%3A%20SharpOpenNat.INatDevice.DeletePortMapAsync(SharpOpenNat.Mapping)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+    <a href="https://github.com/JeremyAnsel/SharpOpenNat/new/main/apiSpec/new?filename=SharpOpenNat_INatDevice_DeletePortMapAsync_SharpOpenNat_Mapping_System_Threading_CancellationToken_.md&amp;value=---%0Auid%3A%20SharpOpenNat.INatDevice.DeletePortMapAsync(SharpOpenNat.Mapping%2CSystem.Threading.CancellationToken)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/JeremyAnsel/SharpOpenNat/blob/main/SharpOpenNat/SharpOpenNat/INatDevice.cs/#L70">View Source</a>
+    <a href="https://github.com/JeremyAnsel/SharpOpenNat/blob/main/SharpOpenNat/SharpOpenNat/INatDevice.cs/#L72">View Source</a>
   </span>
   <a id="SharpOpenNat_INatDevice_DeletePortMapAsync_" data-uid="SharpOpenNat.INatDevice.DeletePortMapAsync*"></a>
-  <h4 id="SharpOpenNat_INatDevice_DeletePortMapAsync_SharpOpenNat_Mapping_" data-uid="SharpOpenNat.INatDevice.DeletePortMapAsync(SharpOpenNat.Mapping)">DeletePortMapAsync(Mapping)</h4>
+  <h4 id="SharpOpenNat_INatDevice_DeletePortMapAsync_SharpOpenNat_Mapping_System_Threading_CancellationToken_" data-uid="SharpOpenNat.INatDevice.DeletePortMapAsync(SharpOpenNat.Mapping,System.Threading.CancellationToken)">DeletePortMapAsync(Mapping, CancellationToken)</h4>
   <div class="markdown level1 summary"><p>Deletes a mapped port asynchronous.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="declaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">Task DeletePortMapAsync(Mapping mapping)</code></pre>
+    <pre><code class="lang-csharp hljs">Task DeletePortMapAsync(Mapping mapping, CancellationToken cancellationToken = default)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-condensed">
@@ -312,6 +320,11 @@ open (forward) ports, close ports and get the externa (visible) IP address.</p>
         <td><span class="parametername">mapping</span></td>
         <td><p>The <a class="xref" href="SharpOpenNat.Mapping.html">Mapping</a> entry.</p>
 </td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken">CancellationToken</a></td>
+        <td><span class="parametername">cancellationToken</span></td>
+        <td></td>
       </tr>
     </tbody>
   </table>
@@ -330,7 +343,7 @@ open (forward) ports, close ports and get the externa (visible) IP address.</p>
       </tr>
     </tbody>
   </table>
-  <h5 id="SharpOpenNat_INatDevice_DeletePortMapAsync_SharpOpenNat_Mapping__examples">Examples</h5>
+  <h5 id="SharpOpenNat_INatDevice_DeletePortMapAsync_SharpOpenNat_Mapping_System_Threading_CancellationToken__examples">Examples</h5>
   <p>device.DeletePortMapAsync(new Mapping(Protocol.Tcp, 1700, 1600));</p>
 
   <h5 class="exceptions">Exceptions</h5>
@@ -351,20 +364,37 @@ open (forward) ports, close ports and get the externa (visible) IP address.</p>
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/JeremyAnsel/SharpOpenNat/new/main/apiSpec/new?filename=SharpOpenNat_INatDevice_GetAllMappingsAsync.md&amp;value=---%0Auid%3A%20SharpOpenNat.INatDevice.GetAllMappingsAsync%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+    <a href="https://github.com/JeremyAnsel/SharpOpenNat/new/main/apiSpec/new?filename=SharpOpenNat_INatDevice_GetAllMappingsAsync_System_Threading_CancellationToken_.md&amp;value=---%0Auid%3A%20SharpOpenNat.INatDevice.GetAllMappingsAsync(System.Threading.CancellationToken)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/JeremyAnsel/SharpOpenNat/blob/main/SharpOpenNat/SharpOpenNat/INatDevice.cs/#L86">View Source</a>
+    <a href="https://github.com/JeremyAnsel/SharpOpenNat/blob/main/SharpOpenNat/SharpOpenNat/INatDevice.cs/#L90">View Source</a>
   </span>
   <a id="SharpOpenNat_INatDevice_GetAllMappingsAsync_" data-uid="SharpOpenNat.INatDevice.GetAllMappingsAsync*"></a>
-  <h4 id="SharpOpenNat_INatDevice_GetAllMappingsAsync" data-uid="SharpOpenNat.INatDevice.GetAllMappingsAsync">GetAllMappingsAsync()</h4>
+  <h4 id="SharpOpenNat_INatDevice_GetAllMappingsAsync_System_Threading_CancellationToken_" data-uid="SharpOpenNat.INatDevice.GetAllMappingsAsync(System.Threading.CancellationToken)">GetAllMappingsAsync(CancellationToken)</h4>
   <div class="markdown level1 summary"><p>Gets all mappings asynchronous.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="declaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">Task&lt;IEnumerable&lt;Mapping&gt;&gt; GetAllMappingsAsync()</code></pre>
+    <pre><code class="lang-csharp hljs">Task&lt;Mapping[]&gt; GetAllMappingsAsync(CancellationToken cancellationToken = default)</code></pre>
   </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken">CancellationToken</a></td>
+        <td><span class="parametername">cancellationToken</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
   <h5 class="returns">Returns</h5>
   <table class="table table-bordered table-condensed">
     <thead>
@@ -375,13 +405,13 @@ open (forward) ports, close ports and get the externa (visible) IP address.</p>
     </thead>
     <tbody>
       <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable</a>&lt;<a class="xref" href="SharpOpenNat.Mapping.html">Mapping</a>&gt;&gt;</td>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;<a class="xref" href="SharpOpenNat.Mapping.html">Mapping</a>[]&gt;</td>
         <td><p>The list of all forwarded ports</p>
 </td>
       </tr>
     </tbody>
   </table>
-  <h5 id="SharpOpenNat_INatDevice_GetAllMappingsAsync_examples">Examples</h5>
+  <h5 id="SharpOpenNat_INatDevice_GetAllMappingsAsync_System_Threading_CancellationToken__examples">Examples</h5>
   <p>var mappings = await device.GetAllMappingsAsync();
 foreach(var mapping in mappings)
 {
@@ -399,27 +429,51 @@ Console.WriteLine(mapping)
     <tbody>
       <tr>
         <td><a class="xref" href="SharpOpenNat.MappingException.html">MappingException</a></td>
-        <td><p>MappingException</p>
-</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.notsupportedexception">NotSupportedException</a></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.operationcanceledexception">OperationCanceledException</a></td>
+        <td></td>
       </tr>
     </tbody>
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/JeremyAnsel/SharpOpenNat/new/main/apiSpec/new?filename=SharpOpenNat_INatDevice_GetExternalIPAsync.md&amp;value=---%0Auid%3A%20SharpOpenNat.INatDevice.GetExternalIPAsync%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+    <a href="https://github.com/JeremyAnsel/SharpOpenNat/new/main/apiSpec/new?filename=SharpOpenNat_INatDevice_GetExternalIPAsync_System_Threading_CancellationToken_.md&amp;value=---%0Auid%3A%20SharpOpenNat.INatDevice.GetExternalIPAsync(System.Threading.CancellationToken)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/JeremyAnsel/SharpOpenNat/blob/main/SharpOpenNat/SharpOpenNat/INatDevice.cs/#L98">View Source</a>
+    <a href="https://github.com/JeremyAnsel/SharpOpenNat/blob/main/SharpOpenNat/SharpOpenNat/INatDevice.cs/#L102">View Source</a>
   </span>
   <a id="SharpOpenNat_INatDevice_GetExternalIPAsync_" data-uid="SharpOpenNat.INatDevice.GetExternalIPAsync*"></a>
-  <h4 id="SharpOpenNat_INatDevice_GetExternalIPAsync" data-uid="SharpOpenNat.INatDevice.GetExternalIPAsync">GetExternalIPAsync()</h4>
+  <h4 id="SharpOpenNat_INatDevice_GetExternalIPAsync_System_Threading_CancellationToken_" data-uid="SharpOpenNat.INatDevice.GetExternalIPAsync(System.Threading.CancellationToken)">GetExternalIPAsync(CancellationToken)</h4>
   <div class="markdown level1 summary"><p>Gets the external (visible) IP address asynchronous. This is the NAT device IP address</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="declaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">Task&lt;IPAddress?&gt; GetExternalIPAsync()</code></pre>
+    <pre><code class="lang-csharp hljs">Task&lt;IPAddress?&gt; GetExternalIPAsync(CancellationToken cancellationToken = default)</code></pre>
   </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken">CancellationToken</a></td>
+        <td><span class="parametername">cancellationToken</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
   <h5 class="returns">Returns</h5>
   <table class="table table-bordered table-condensed">
     <thead>
@@ -436,7 +490,7 @@ Console.WriteLine(mapping)
       </tr>
     </tbody>
   </table>
-  <h5 id="SharpOpenNat_INatDevice_GetExternalIPAsync_examples">Examples</h5>
+  <h5 id="SharpOpenNat_INatDevice_GetExternalIPAsync_System_Threading_CancellationToken__examples">Examples</h5>
   <p>Console.WriteLine(&quot;My public IP is: {0}&quot;, await device.GetExternalIPAsync());</p>
 
   <h5 class="exceptions">Exceptions</h5>
@@ -457,19 +511,19 @@ Console.WriteLine(mapping)
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/JeremyAnsel/SharpOpenNat/new/main/apiSpec/new?filename=SharpOpenNat_INatDevice_GetSpecificMappingAsync_SharpOpenNat_Protocol_System_Int32_.md&amp;value=---%0Auid%3A%20SharpOpenNat.INatDevice.GetSpecificMappingAsync(SharpOpenNat.Protocol%2CSystem.Int32)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+    <a href="https://github.com/JeremyAnsel/SharpOpenNat/new/main/apiSpec/new?filename=SharpOpenNat_INatDevice_GetSpecificMappingAsync_SharpOpenNat_Protocol_System_Int32_System_Threading_CancellationToken_.md&amp;value=---%0Auid%3A%20SharpOpenNat.INatDevice.GetSpecificMappingAsync(SharpOpenNat.Protocol%2CSystem.Int32%2CSystem.Threading.CancellationToken)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/JeremyAnsel/SharpOpenNat/blob/main/SharpOpenNat/SharpOpenNat/INatDevice.cs/#L108">View Source</a>
+    <a href="https://github.com/JeremyAnsel/SharpOpenNat/blob/main/SharpOpenNat/SharpOpenNat/INatDevice.cs/#L114">View Source</a>
   </span>
   <a id="SharpOpenNat_INatDevice_GetSpecificMappingAsync_" data-uid="SharpOpenNat.INatDevice.GetSpecificMappingAsync*"></a>
-  <h4 id="SharpOpenNat_INatDevice_GetSpecificMappingAsync_SharpOpenNat_Protocol_System_Int32_" data-uid="SharpOpenNat.INatDevice.GetSpecificMappingAsync(SharpOpenNat.Protocol,System.Int32)">GetSpecificMappingAsync(Protocol, int)</h4>
+  <h4 id="SharpOpenNat_INatDevice_GetSpecificMappingAsync_SharpOpenNat_Protocol_System_Int32_System_Threading_CancellationToken_" data-uid="SharpOpenNat.INatDevice.GetSpecificMappingAsync(SharpOpenNat.Protocol,System.Int32,System.Threading.CancellationToken)">GetSpecificMappingAsync(Protocol, int, CancellationToken)</h4>
   <div class="markdown level1 summary"><p>Gets the specified mapping asynchronous.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="declaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">Task&lt;Mapping?&gt; GetSpecificMappingAsync(Protocol protocol, int port)</code></pre>
+    <pre><code class="lang-csharp hljs">Task&lt;Mapping?&gt; GetSpecificMappingAsync(Protocol protocol, int port, CancellationToken cancellationToken = default)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-condensed">
@@ -493,6 +547,11 @@ Console.WriteLine(mapping)
         <td><p>The port.</p>
 </td>
       </tr>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken">CancellationToken</a></td>
+        <td><span class="parametername">cancellationToken</span></td>
+        <td></td>
+      </tr>
     </tbody>
   </table>
   <h5 class="returns">Returns</h5>
@@ -511,6 +570,28 @@ Console.WriteLine(mapping)
       </tr>
     </tbody>
   </table>
+  <h5 class="exceptions">Exceptions</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Condition</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.notsupportedexception">NotSupportedException</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="extensionmethods">Extension Methods</h3>
+  <div>
+      <a class="xref" href="SharpOpenNat.Extensions.html#SharpOpenNat_Extensions_GetAwailablePortAsync_SharpOpenNat_INatDevice_System_Int32_System_Threading_CancellationToken_">Extensions.GetAwailablePortAsync(INatDevice, int, CancellationToken)</a>
+  </div>
+  <div>
+      <a class="xref" href="SharpOpenNat.Extensions.html#SharpOpenNat_Extensions_GetUsedPortAsync_SharpOpenNat_INatDevice_System_Threading_CancellationToken_">Extensions.GetUsedPortAsync(INatDevice, CancellationToken)</a>
+  </div>
 
 </article>
           </div>
