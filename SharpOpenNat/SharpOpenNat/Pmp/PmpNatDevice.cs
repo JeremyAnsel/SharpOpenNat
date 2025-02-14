@@ -27,6 +27,7 @@
 // WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 //
 
+using SharpOpenNat.Pmp;
 using System.Net;
 using System.Net.Sockets;
 
@@ -88,21 +89,11 @@ internal sealed class PmpNatDevice : NatDevice
     /// <exception cref="MappingException"></exception>
     private async Task<Mapping> InternalCreatePortMapAsync(Mapping mapping, bool create, CancellationToken cancellationToken)
     {
-        var package = new List<byte>
-        {
-            PmpConstants.Version,
-            mapping.Protocol == Protocol.Tcp ? PmpConstants.OperationCodeTcp : PmpConstants.OperationCodeUdp,
-            0, //reserved
-            0 //reserved
-        };
-
-        package.AddRange(BitConverter.GetBytes(IPAddress.HostToNetworkOrder((short)mapping.PrivatePort)));
-        package.AddRange(BitConverter.GetBytes(create ? IPAddress.HostToNetworkOrder((short)mapping.PublicPort) : (short)0));
-        package.AddRange(BitConverter.GetBytes(IPAddress.HostToNetworkOrder(mapping.Lifetime)));
-
+        var rented = System.Buffers.ArrayPool<Byte>.Shared.Rent(16);
         try
         {
-            byte[] buffer = package.ToArray();
+            PmpMappingWriter.WriteMapping(rented, mapping, create);
+
             int attempt = 0;
             int delay = PmpConstants.RetryDelay;
 
@@ -112,7 +103,7 @@ internal sealed class PmpNatDevice : NatDevice
             while (attempt < PmpConstants.RetryAttempts)
             {
                 cancellationToken.ThrowIfCancellationRequested();
-                await udpClient.SendAsync(buffer, buffer.Length, HostEndPoint);
+                await udpClient.SendAsync(rented, 16, HostEndPoint);
 
                 attempt++;
                 delay *= 2;
@@ -129,6 +120,10 @@ internal sealed class PmpNatDevice : NatDevice
             OpenNat.TraceSource.LogError(message);
             var pmpException = e as MappingException;
             throw new MappingException(message, pmpException);
+        }
+        finally
+        {
+            System.Buffers.ArrayPool<Byte>.Shared.Return(rented);
         }
 
         return mapping;
