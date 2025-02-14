@@ -136,53 +136,44 @@ internal class NatDiscoverer : INatDiscoverer
     /// <summary>
     /// Release all ports opened by SharpOpenNat. 
     /// </summary>
-    public void ReleaseAll()
+    public async Task ReleaseAllAsync(CancellationToken cancellationToken = default)
     {
         foreach (var device in _devices.Values)
         {
-            device.ReleaseAll();
+            await device.ReleaseAllAsync(cancellationToken);
         }
     }
 
-    private void ReleaseSessionMappings()
+    private async Task ReleaseSessionMappingsAsync(CancellationToken cancellationToken = default)
     {
         foreach (var device in _devices.Values)
         {
-            device.ReleaseSessionMappings();
+            await device.ReleaseSessionMappingsAsync(cancellationToken);
         }
     }
 
-    private void RenewMappings(object? state)
+    private async void RenewMappings(object? state)
     {
-        Task.Factory.StartNew(async () =>
+        try
         {
-            foreach (var device in _devices.Values)
+            using var cts = new CancellationTokenSource(TimeSpan.FromSeconds(2));
+            var currentDevices = _devices.Values.ToArray();
+            foreach (var device in currentDevices)
             {
-                await device.RenewMappings();
-            }
-        });
-    }
-
-    /// <summary>
-    /// 
-    /// </summary>
-    /// <param name="startingPort"></param>
-    /// <param name="cancellationToken"></param>
-    /// <returns></returns>
-    public async Task<int> GetAvailablePortAsync(int startingPort, CancellationToken cancellationToken = default)
-    {
-        var portArray = await GetUsedPortsAsync(cancellationToken);
-
-        for (int i = startingPort; i < ushort.MaxValue; i++)
-        {
-            if (!portArray.Contains(i))
-            {
-                return i;
+                await device.RenewMappings(cts.Token);
             }
         }
-
-        return 0;
+        catch (OperationCanceledException)
+        {
+            OpenNat.TraceSource.LogInfo("Nat discoverer did not manage to renew all mapings before a new timer cycle");
+        }
+        catch (Exception ex)
+        {
+            OpenNat.TraceSource.LogError("Nat discoverer did not manage to renew all mapings because {0}", ex);
+        }
     }
+
+    
 
     /// <summary>
     /// 
@@ -203,33 +194,12 @@ internal class NatDiscoverer : INatDiscoverer
         return 0;
     }
 
-    /// <summary>
-    /// 
-    /// </summary>
-    /// <returns></returns>
-    public async Task<List<int>> GetUsedPortsAsync(CancellationToken cancellationToken = default)
-    {
-        using var cts = CancellationTokenSource.CreateLinkedTokenSource(cancellationToken);
-        cts.CancelAfter(3 * 1000);
-        var device = await DiscoverDeviceAsync(PortMapper.Upnp | PortMapper.Pmp, cts.Token);
-
-        var portArray = new List<int>();
-
-        foreach (var mapping in await device.GetAllMappingsAsync())
-        {
-            portArray.Add(mapping.PrivatePort);
-            portArray.Add(mapping.PublicPort);
-        }
-
-        portArray.Sort();
-
-        return portArray;
-    }
+    
 
     public void Dispose()
     {
         OpenNat.TraceSource.LogInfo("Closing ports opened in this session");
         _renewTimer.Dispose();
-        ReleaseSessionMappings();
+        Task.Run(async () => await ReleaseSessionMappingsAsync()).Wait();
     }
 }

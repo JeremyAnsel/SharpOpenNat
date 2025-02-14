@@ -2,6 +2,7 @@
 // Authors:
 //   Ben Motmans <ben.motmans@gmail.com>
 //   Lucas Ontivero lucas.ontivero@gmail.com
+//   Luigi Trabacchin <trabacchin.luigi@gmail.com>
 //
 // Copyright (C) 2007 Ben Motmans
 // Copyright (C) 2014 Lucas Ontivero
@@ -54,37 +55,38 @@ internal sealed class PmpNatDevice : NatDevice
         _publicAddress = publicAddress;
     }
 
-    public override async Task CreatePortMapAsync(Mapping mapping)
+    public override async Task CreatePortMapAsync(Mapping mapping, CancellationToken cancellationToken)
     {
-        await InternalCreatePortMapAsync(mapping, true)
-            .TimeoutAfter(TimeSpan.FromSeconds(4));
+        await InternalCreatePortMapAsync(mapping, true, cancellationToken)
+            .TimeoutAfter(TimeSpan.FromSeconds(4), cancellationToken);
         RegisterMapping(mapping);
     }
 
-    public override async Task DeletePortMapAsync(Mapping mapping)
+    public override async Task DeletePortMapAsync(Mapping mapping, CancellationToken cancellationToken = default)
     {
-        await InternalCreatePortMapAsync(mapping, false)
-            .TimeoutAfter(TimeSpan.FromSeconds(4));
+        await InternalCreatePortMapAsync(mapping, false, cancellationToken)
+            .TimeoutAfter(TimeSpan.FromSeconds(4), cancellationToken);
         UnregisterMapping(mapping);
     }
 
-    public override Task<IEnumerable<Mapping>> GetAllMappingsAsync()
+    public override Task<Mapping[]> GetAllMappingsAsync(CancellationToken cancellationToken = default)
     {
         throw new NotSupportedException();
     }
 
-    public override Task<IPAddress?> GetExternalIPAsync()
+    public override Task<IPAddress?> GetExternalIPAsync(CancellationToken cancellationToken = default)
     {
         return Task.Run(() => (IPAddress?)_publicAddress)
-            .TimeoutAfter(TimeSpan.FromSeconds(4));
+            .TimeoutAfter(TimeSpan.FromSeconds(4), cancellationToken);
     }
 
-    public override Task<Mapping?> GetSpecificMappingAsync(Protocol protocol, int port)
+    public override Task<Mapping?> GetSpecificMappingAsync(Protocol protocol, int port, CancellationToken cancellationToken = default)
     {
         throw new NotSupportedException("NAT-PMP does not specify a way to get a specific port map");
     }
 
-    private async Task<Mapping> InternalCreatePortMapAsync(Mapping mapping, bool create)
+    /// <exception cref="MappingException"></exception>
+    private async Task<Mapping> InternalCreatePortMapAsync(Mapping mapping, bool create, CancellationToken cancellationToken)
     {
         var package = new List<byte>
         {
@@ -109,11 +111,12 @@ internal sealed class PmpNatDevice : NatDevice
 
             while (attempt < PmpConstants.RetryAttempts)
             {
+                cancellationToken.ThrowIfCancellationRequested();
                 await udpClient.SendAsync(buffer, buffer.Length, HostEndPoint);
 
                 attempt++;
                 delay *= 2;
-                Thread.Sleep(delay);
+                await Task.Delay(delay, cancellationToken);
             }
         }
         catch (Exception e)

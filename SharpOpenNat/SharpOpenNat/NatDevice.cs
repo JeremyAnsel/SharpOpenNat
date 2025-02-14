@@ -3,6 +3,7 @@
 //   Alan McGovern alan.mcgovern@gmail.com
 //   Ben Motmans <ben.motmans@gmail.com>
 //   Lucas Ontivero lucasontivero@gmail.com
+//   Luigi Trabacchin <trabacchin.luigi@gmail.com>
 //
 // Copyright (C) 2006 Alan McGovern
 // Copyright (C) 2007 Ben Motmans
@@ -35,10 +36,10 @@ namespace SharpOpenNat;
 
 internal abstract class NatDevice : INatDevice
 {
-    
+
     public abstract IPEndPoint HostEndPoint { get; }
 
-    
+
     public abstract IPAddress LocalAddress { get; }
 
     private readonly HashSet<Mapping> _openedMapping = new();
@@ -50,15 +51,15 @@ internal abstract class NatDevice : INatDevice
         LastSeen = DateTime.Now;
     }
 
-    public abstract Task CreatePortMapAsync(Mapping mapping);
+    public abstract Task CreatePortMapAsync(Mapping mapping, CancellationToken cancellationToken = default);
 
-    public abstract Task DeletePortMapAsync(Mapping mapping);
+    public abstract Task DeletePortMapAsync(Mapping mapping, CancellationToken cancellationToken = default);
 
-    public abstract Task<IEnumerable<Mapping>> GetAllMappingsAsync();
+    public abstract Task<Mapping[]> GetAllMappingsAsync(CancellationToken cancellationToken = default);
 
-    public abstract Task<IPAddress?> GetExternalIPAsync();
+    public abstract Task<IPAddress?> GetExternalIPAsync(CancellationToken cancellationToken = default);
 
-    public abstract Task<Mapping?> GetSpecificMappingAsync(Protocol protocol, int port);
+    public abstract Task<Mapping?> GetSpecificMappingAsync(Protocol protocol, int port, CancellationToken cancellationToken = default);
 
     /// <inheritdoc />
     protected void RegisterMapping(Mapping mapping)
@@ -74,7 +75,7 @@ internal abstract class NatDevice : INatDevice
     }
 
 
-    internal void ReleaseMapping(IEnumerable<Mapping> mappings)
+    internal async Task ReleaseMappings(IEnumerable<Mapping> mappings, CancellationToken cancellationToken = default)
     {
         var maparr = mappings.ToArray();
         var mapCount = maparr.Length;
@@ -85,7 +86,7 @@ internal abstract class NatDevice : INatDevice
 
             try
             {
-                DeletePortMapAsync(mapping);
+                await DeletePortMapAsync(mapping, cancellationToken);
                 OpenNat.TraceSource.LogInfo(mapping + " port successfully closed");
             }
             catch (Exception)
@@ -95,31 +96,34 @@ internal abstract class NatDevice : INatDevice
         }
     }
 
-    internal void ReleaseAll()
+    internal async Task ReleaseAllAsync(CancellationToken cancellationToken = default)
     {
-        ReleaseMapping(_openedMapping);
+        await ReleaseMappings(_openedMapping, cancellationToken);
     }
 
-    internal void ReleaseSessionMappings()
+    internal async Task  ReleaseSessionMappingsAsync(CancellationToken cancellationToken = default)
     {
         var mappings = from m in _openedMapping
                        where m.LifetimeType == MappingLifetime.Session
                        select m;
 
-        ReleaseMapping(mappings);
+        await ReleaseMappings(mappings, cancellationToken);
     }
 
-    internal async Task RenewMappings()
+    /// <exception cref="OperationCanceledException" />
+    /// <exception cref="ObjectDisposedException" />
+    internal async Task RenewMappings(CancellationToken cancellationToken = default)
     {
-        var mappings = _openedMapping.Where(x => x.ShoundRenew());
-        foreach (var mapping in mappings.ToArray())
+        var mappings = _openedMapping.Where(x => x.ShoundRenew()).ToArray();
+        foreach (var mapping in mappings)
         {
+            cancellationToken.ThrowIfCancellationRequested();
             var m = mapping;
-            await RenewMapping(m);
+            await RenewMapping(m, cancellationToken);
         }
     }
 
-    private async Task RenewMapping(Mapping mapping)
+    private async Task RenewMapping(Mapping mapping, CancellationToken cancellationToken = default)
     {
         var renewMapping = new Mapping(mapping);
         try
@@ -127,7 +131,7 @@ internal abstract class NatDevice : INatDevice
             renewMapping.Expiration = DateTime.UtcNow.AddSeconds(mapping.Lifetime);
 
             OpenNat.TraceSource.LogInfo("Renewing mapping {0}", renewMapping);
-            await CreatePortMapAsync(renewMapping);
+            await CreatePortMapAsync(renewMapping, cancellationToken);
             OpenNat.TraceSource.LogInfo("Next renew scheduled at: {0}",
                                               renewMapping.Expiration.ToLocalTime().TimeOfDay);
         }
