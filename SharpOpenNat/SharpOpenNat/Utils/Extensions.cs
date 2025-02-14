@@ -1,6 +1,7 @@
 ﻿//
 // Authors:
 //   Lucas Ontivero lucasontivero@gmail.com 
+//   Luigi Trabacchin <trabacchin.luigi@gmail.com>
 //
 // Copyright (C) 2014 Lucas Ontivero
 //
@@ -24,117 +25,63 @@
 // WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 //
 
-using System.Diagnostics;
-using System.Text;
-using System.Xml;
-
 namespace SharpOpenNat;
 
-internal static class StreamExtensions
+/// <summary>
+/// Extension Methods for the exposed interfaces
+/// </summary>
+public static class Extensions
 {
-    internal static string ReadAsMany(this StreamReader stream, int bytesToRead)
+
+    /// <summary>
+    /// Get all the available ports starting from <paramref name="startingPort" /> on the first found device
+    /// </summary>
+    public static async Task<int> GetAvailablePortAsync(this INatDiscoverer discoverer, int startingPort, CancellationToken cancellationToken = default)
     {
-        var buffer = new char[bytesToRead];
-        stream.ReadBlock(buffer, 0, bytesToRead);
-        return new string(buffer);
+        var device = await discoverer.DiscoverDeviceAsync(cancellationToken);
+        return await device.GetAwailablePortAsync(startingPort, cancellationToken);
+    }
+    /// <summary>
+    /// Get all the available ports on the specified <paramref name="device"/> starting from <paramref name="startingPort"/>
+    /// </summary>
+    public static async Task<int> GetAwailablePortAsync(this INatDevice device, int startingPort, CancellationToken cancellationToken = default)
+    {
+        var portArray = await device.GetUsedPortAsync(cancellationToken);
+        for (int i = startingPort; i < ushort.MaxValue; i++)
+        {
+            if (!portArray.Contains(i))
+            {
+                return i;
+            }
+        }
+
+        return 0;
     }
 
-    internal static string GetXmlElementText(this XmlNode node, string elementName)
+    /// <summary>
+    /// Get all used ports on the first found device
+    /// </summary>
+    public static async Task<List<int>> GetUsedPortAsync(this INatDiscoverer discoverer, CancellationToken cancellationToken = default)
     {
-        XmlElement? element = node[elementName];
-        return element != null ? element.InnerText : string.Empty;
+        var device = await discoverer.DiscoverDeviceAsync(cancellationToken);
+        return await device.GetUsedPortAsync(cancellationToken);
     }
 
-    internal static bool ContainsIgnoreCase(this string s, string pattern)
+    /// <summary>
+    /// Get all used ports on the specified <paramref name="device"/>
+    /// </summary>
+    public static async Task<List<int>> GetUsedPortAsync(this INatDevice device, CancellationToken cancellationToken = default)
     {
-#if NET6_0_OR_GREATER
-        return s.Contains(pattern, StringComparison.OrdinalIgnoreCase);
-#else
-        return s.IndexOf(pattern, StringComparison.OrdinalIgnoreCase) >= 0;
-#endif
-    }
+        var portArray = new List<int>();
 
-    internal static void LogInfo(this TraceSource source, string format, params object[] args)
-    {
-        try
+        foreach (var mapping in await device.GetAllMappingsAsync(cancellationToken))
         {
-            source.TraceEvent(TraceEventType.Information, 0, format, args);
+            portArray.Add(mapping.PrivatePort);
+            portArray.Add(mapping.PublicPort);
         }
-        catch (ObjectDisposedException)
-        {
-            source.Switch.Level = SourceLevels.Off;
-        }
-    }
 
-    internal static void LogWarn(this TraceSource source, string format, params object[] args)
-    {
-        try
-        {
-            source.TraceEvent(TraceEventType.Warning, 0, format, args);
-        }
-        catch (ObjectDisposedException)
-        {
-            source.Switch.Level = SourceLevels.Off;
-        }
-    }
+        portArray.Sort();
 
-
-    internal static void LogError(this TraceSource source, string format, params object[] args)
-    {
-        try
-        {
-            source.TraceEvent(TraceEventType.Error, 0, format, args);
-        }
-        catch (ObjectDisposedException)
-        {
-            source.Switch.Level = SourceLevels.Off;
-        }
-    }
-
-    internal static string ToPrintableXml(this XmlDocument document)
-    {
-        using var stream = new MemoryStream();
-        using var writer = new XmlTextWriter(stream, Encoding.Unicode);
-
-        try
-        {
-            writer.Formatting = Formatting.Indented;
-
-            document.WriteContentTo(writer);
-            writer.Flush();
-            stream.Flush();
-
-            // Have to rewind the MemoryStream in order to read
-            // its contents.
-            stream.Position = 0;
-
-            // Read MemoryStream contents into a StreamReader.
-            var reader = new StreamReader(stream);
-
-            // Extract the text from the StreamReader.
-            return reader.ReadToEnd();
-        }
-        catch (Exception)
-        {
-            return document.ToString()!;
-        }
-    }
-
-    public static async Task<TResult> TimeoutAfter<TResult>(this Task<TResult> task, TimeSpan timeout)
-    {
-#if DEBUG
-        return await task;
-#else
-		var timeoutCancellationTokenSource = new CancellationTokenSource();
-
-		Task completedTask = await Task.WhenAny(task, Task.Delay(timeout, timeoutCancellationTokenSource.Token));
-		if (completedTask == task)
-		{
-			timeoutCancellationTokenSource.Cancel();
-			return await task;
-		}
-		throw new TimeoutException(
-			"The operation has timed out. The network is broken, router has gone or is too busy.");
-#endif
+        return portArray;
     }
 }

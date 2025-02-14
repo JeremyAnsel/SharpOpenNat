@@ -3,6 +3,7 @@
 //   Alan McGovern alan.mcgovern@gmail.com
 //   Ben Motmans <ben.motmans@gmail.com>
 //   Lucas Ontivero lucasontivero@gmail.com 
+//   Luigi Trabacchin <trabacchin.luigi@gmail.com>
 //
 // Copyright (C) 2006 Alan McGovern
 // Copyright (C) 2007 Ben Motmans
@@ -54,19 +55,19 @@ internal sealed class UpnpNatDevice : NatDevice
         _soapClient = new SoapClient(DeviceInfo.ServiceControlUri, DeviceInfo.ServiceType);
     }
 
-    public override async Task<IPAddress?> GetExternalIPAsync()
+    public override async Task<IPAddress?> GetExternalIPAsync(CancellationToken cancellationToken = default)
     {
         OpenNat.TraceSource.LogInfo("GetExternalIPAsync - Getting external IP address");
         var message = new GetExternalIPAddressRequestMessage();
         var responseData = await _soapClient
             .InvokeAsync("GetExternalIPAddress", message.ToXml())
-            .TimeoutAfter(TimeSpan.FromSeconds(4));
+            .TimeoutAfter(TimeSpan.FromSeconds(4), cancellationToken);
 
         var response = new GetExternalIPAddressResponseMessage(responseData, DeviceInfo.ServiceType);
         return response.ExternalIPAddress;
     }
 
-    public override async Task CreatePortMapAsync(Mapping mapping)
+    public override async Task CreatePortMapAsync(Mapping mapping, CancellationToken cancellationToken = default)
     {
         Guard.IsNotNull(mapping, nameof(mapping));
         if (mapping.PrivateIP.Equals(IPAddress.None)) mapping.PrivateIP = DeviceInfo.LocalAddress;
@@ -78,7 +79,7 @@ internal sealed class UpnpNatDevice : NatDevice
             var message = new CreatePortMappingRequestMessage(mapping);
             await _soapClient
                 .InvokeAsync("AddPortMapping", message.ToXml())
-                .TimeoutAfter(TimeSpan.FromSeconds(4));
+                .TimeoutAfter(TimeSpan.FromSeconds(4), cancellationToken);
             RegisterMapping(mapping);
         }
         catch (MappingException me)
@@ -116,11 +117,11 @@ internal sealed class UpnpNatDevice : NatDevice
 
         if (retry)
         {
-            await CreatePortMapAsync(mapping);
+            await CreatePortMapAsync(mapping, cancellationToken);
         }
     }
 
-    public override async Task DeletePortMapAsync(Mapping mapping)
+    public override async Task DeletePortMapAsync(Mapping mapping, CancellationToken cancellationToken = default)
     {
         Guard.IsNotNull(mapping, nameof(mapping));
 
@@ -133,7 +134,7 @@ internal sealed class UpnpNatDevice : NatDevice
             var message = new DeletePortMappingRequestMessage(mapping);
             await _soapClient
                 .InvokeAsync("DeletePortMapping", message.ToXml())
-                .TimeoutAfter(TimeSpan.FromSeconds(4));
+                .TimeoutAfter(TimeSpan.FromSeconds(4), cancellationToken);
             UnregisterMapping(mapping);
         }
         catch (MappingException e)
@@ -142,7 +143,7 @@ internal sealed class UpnpNatDevice : NatDevice
         }
     }
 
-    public override async Task<IEnumerable<Mapping>> GetAllMappingsAsync()
+    public override async Task<Mapping[]> GetAllMappingsAsync(CancellationToken cancellationToken = default)
     {
         var index = 0;
         var mappings = new List<Mapping>();
@@ -152,11 +153,12 @@ internal sealed class UpnpNatDevice : NatDevice
         {
             try
             {
+                cancellationToken.ThrowIfCancellationRequested();
                 var message = new GetGenericPortMappingEntry(index++);
 
                 var responseData = await _soapClient
                     .InvokeAsync("GetGenericPortMappingEntry", message.ToXml())
-                    .TimeoutAfter(TimeSpan.FromSeconds(4));
+                    .TimeoutAfter(TimeSpan.FromSeconds(4), cancellationToken);
 
                 var responseMessage = new GetPortMappingEntryResponseMessage(responseData, DeviceInfo.ServiceType, true);
 
@@ -196,7 +198,7 @@ internal sealed class UpnpNatDevice : NatDevice
         return mappings.ToArray();
     }
 
-    public override async Task<Mapping?> GetSpecificMappingAsync(Protocol protocol, int publicPort)
+    public override async Task<Mapping?> GetSpecificMappingAsync(Protocol protocol, int publicPort, CancellationToken cancellationToken = default)
     {
         Guard.IsTrue(protocol == Protocol.Tcp || protocol == Protocol.Udp, nameof(protocol));
         Guard.IsInRange(publicPort, 0, ushort.MaxValue, "port");
@@ -208,7 +210,7 @@ internal sealed class UpnpNatDevice : NatDevice
             var message = new GetSpecificPortMappingEntryRequestMessage(protocol, publicPort);
             var responseData = await _soapClient
                 .InvokeAsync("GetSpecificPortMappingEntry", message.ToXml())
-                .TimeoutAfter(TimeSpan.FromSeconds(4));
+                .TimeoutAfter(TimeSpan.FromSeconds(4), cancellationToken);
 
             var messageResponse = new GetPortMappingEntryResponseMessage(responseData, DeviceInfo.ServiceType, false);
 

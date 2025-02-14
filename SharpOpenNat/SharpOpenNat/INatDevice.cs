@@ -53,21 +53,23 @@ namespace SharpOpenNat
         /// Creates the port map asynchronous.
         /// </summary>
         /// <param name="mapping">The <see cref="Mapping">Mapping</see> entry.</param>
+        /// <param name="cancellationToken"></param>
         /// <example>
         /// device.CreatePortMapAsync(new Mapping(Protocol.Tcp, 1700, 1600));
         /// </example>
         /// <exception cref="MappingException">MappingException</exception>
-        Task CreatePortMapAsync(Mapping mapping);
+        Task CreatePortMapAsync(Mapping mapping, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Deletes a mapped port asynchronous.
         /// </summary>
         /// <param name="mapping">The <see cref="Mapping">Mapping</see> entry.</param>
+        /// <param name="cancellationToken"></param>
         /// <example>
         /// device.DeletePortMapAsync(new Mapping(Protocol.Tcp, 1700, 1600));
         /// </example>
         /// <exception cref="MappingException">MappingException-class</exception>
-        Task DeletePortMapAsync(Mapping mapping);
+        Task DeletePortMapAsync(Mapping mapping, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Gets all mappings asynchronous.
@@ -82,8 +84,10 @@ namespace SharpOpenNat
         ///	 Console.WriteLine(mapping)
         /// }
         /// </example>
-        /// <exception cref="MappingException">MappingException</exception>
-        Task<IEnumerable<Mapping>> GetAllMappingsAsync();
+        /// <exception cref="MappingException" />
+        /// <exception cref="NotSupportedException" />
+        /// <exception cref="OperationCanceledException" />
+        Task<Mapping[]> GetAllMappingsAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Gets the external (visible) IP address asynchronous. This is the NAT device IP address
@@ -95,16 +99,18 @@ namespace SharpOpenNat
         /// Console.WriteLine("My public IP is: {0}", await device.GetExternalIPAsync());
         /// </example>
         /// <exception cref="MappingException">MappingException</exception>
-        Task<IPAddress?> GetExternalIPAsync();
+        Task<IPAddress?> GetExternalIPAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Gets the specified mapping asynchronous.
         /// </summary>
         /// <param name="protocol">The protocol.</param>
         /// <param name="port">The port.</param>
+        /// <param name="cancellationToken"></param>
         /// <returns>
         /// The matching mapping
         /// </returns>
-        Task<Mapping?> GetSpecificMappingAsync(Protocol protocol, int port);
+        /// <exception cref="NotSupportedException" />
+        Task<Mapping?> GetSpecificMappingAsync(Protocol protocol, int port, CancellationToken cancellationToken = default);
     }
 }
