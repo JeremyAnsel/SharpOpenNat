@@ -59,4 +59,5 @@ internal static class PmpConstants
     // Out of resources (NAT box cannot create any more mappings at this time)
 
     public const short ResultCodeUnsupportedOperationCode = 5; // Unsupported opcode
+    public const int CreateMappingPackageLength = 12;
 }

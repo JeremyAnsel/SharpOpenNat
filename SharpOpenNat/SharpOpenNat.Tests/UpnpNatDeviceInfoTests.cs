@@ -30,7 +30,7 @@ public class UpnpNatDeviceInfoTests
         package.AddRange(BitConverter.GetBytes(create ? IPAddress.HostToNetworkOrder((short)mapping.PublicPort) : (short)0));
         package.AddRange(BitConverter.GetBytes(IPAddress.HostToNetworkOrder(mapping.Lifetime)));
 
-        var buffer = new byte[12];
+        var buffer = new byte[PmpConstants.CreateMappingPackageLength];
         PmpMappingWriter.WriteMapping(buffer, mapping, create);
         CollectionAssert.AreEqual(package, buffer);
     }
