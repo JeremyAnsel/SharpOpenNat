@@ -89,7 +89,7 @@ internal sealed class PmpNatDevice : NatDevice
     /// <exception cref="MappingException"></exception>
     private async Task<Mapping> InternalCreatePortMapAsync(Mapping mapping, bool create, CancellationToken cancellationToken)
     {
-        var rented = System.Buffers.ArrayPool<Byte>.Shared.Rent(16);
+        var rented = System.Buffers.ArrayPool<Byte>.Shared.Rent(PmpConstants.CreateMappingPackageLength);
         try
         {
             PmpMappingWriter.WriteMapping(rented, mapping, create);
@@ -103,7 +103,7 @@ internal sealed class PmpNatDevice : NatDevice
             while (attempt < PmpConstants.RetryAttempts)
             {
                 cancellationToken.ThrowIfCancellationRequested();
-                await udpClient.SendAsync(rented, 16, HostEndPoint);
+                await udpClient.SendAsync(rented, PmpConstants.CreateMappingPackageLength, HostEndPoint);
 
                 attempt++;
                 delay *= 2;
