@@ -28,15 +28,15 @@ using SharpOpenNat;
 
 var t = Task.Run(async () =>
 {
-    //var usedPorts = await NatDiscoverer.GetUsedPorts();
-    //Console.WriteLine(1600 + " -> " + NatDiscoverer.GetAvailablePort(usedPorts, 1600));
-    //Console.WriteLine(1700 + " -> " + NatDiscoverer.GetAvailablePort(usedPorts, 1700));
-    //Console.WriteLine(1601 + " -> " + NatDiscoverer.GetAvailablePort(usedPorts, 1601));
-    //Console.WriteLine(1701 + " -> " + NatDiscoverer.GetAvailablePort(usedPorts, 1701));
-    //Console.WriteLine(1602 + " -> " + NatDiscoverer.GetAvailablePort(usedPorts, 1602));
-    //Console.WriteLine(1702 + " -> " + NatDiscoverer.GetAvailablePort(usedPorts, 1702));
-    //Console.WriteLine(1603 + " -> " + NatDiscoverer.GetAvailablePort(usedPorts, 1603));
-    //Console.WriteLine(1703 + " -> " + NatDiscoverer.GetAvailablePort(usedPorts, 1703));
+    //var usedPorts = await OpenNat.Discoverer.GetUsedPortsAsync();
+    //Console.WriteLine(1600 + " -> " + await OpenNat.Discoverer.GetAvailablePortAsync(1600));
+    //Console.WriteLine(1700 + " -> " + await OpenNat.Discoverer.GetAvailablePortAsync(1700));
+    //Console.WriteLine(1601 + " -> " + await OpenNat.Discoverer.GetAvailablePortAsync(1601));
+    //Console.WriteLine(1701 + " -> " + await OpenNat.Discoverer.GetAvailablePortAsync(1701));
+    //Console.WriteLine(1602 + " -> " + await OpenNat.Discoverer.GetAvailablePortAsync(1602));
+    //Console.WriteLine(1702 + " -> " + await OpenNat.Discoverer.GetAvailablePortAsync(1702));
+    //Console.WriteLine(1603 + " -> " + await OpenNat.Discoverer.GetAvailablePortAsync(1603));
+    //Console.WriteLine(1703 + " -> " + await OpenNat.Discoverer.GetAvailablePortAsync(1703));
 
     using var cts = new CancellationTokenSource(5000);
     var device = await OpenNat.Discoverer.DiscoverDeviceAsync(PortMapper.Upnp, cts.Token);

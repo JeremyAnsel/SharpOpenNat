@@ -36,7 +36,7 @@ Example
 The simplest scenario:
 
 ```c#
-var device = await NatDiscoverer.DiscoverDeviceAsync();
+var device = await OpenNat.Discoverer.DiscoverDeviceAsync();
 var ip = await device.GetExternalIPAsync();
 Console.WriteLine("The external IP Address is: {0} ", ip);
 ```
@@ -44,8 +44,8 @@ Console.WriteLine("The external IP Address is: {0} ", ip);
 The following piece of code shows a common scenario: It starts the discovery process for a NAT-UPNP device and onces discovered it creates a port mapping. If no device is found before ten seconds, it fails with NatDeviceNotFoundException.
 
 ```c#
-var cts = new CancellationTokenSource(10000);
-var device = await NatDiscoverer.DiscoverDeviceAsync(PortMapper.Upnp, cts);
+using var cts = new CancellationTokenSource(10000);
+var device = await OpenNat.Discoverer.DiscoverDeviceAsync(PortMapper.Upnp, cts.Token);
 
 await device.CreatePortMapAsync(new Mapping(Protocol.Tcp, 1600, 1700, "The mapping name"));
 ```
