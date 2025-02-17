@@ -34,19 +34,20 @@ public static class Extensions
 {
 
     /// <summary>
-    /// Get all the available ports starting from <paramref name="startingPort" /> on the first found device
+    /// Get the first available port starting from <paramref name="startingPort" /> on the first found device
     /// </summary>
     public static async Task<int> GetAvailablePortAsync(this INatDiscoverer discoverer, int startingPort, CancellationToken cancellationToken = default)
     {
         var device = await discoverer.DiscoverDeviceAsync(cancellationToken);
-        return await device.GetAwailablePortAsync(startingPort, cancellationToken);
+        return await device.GetAvailablePortAsync(startingPort, cancellationToken);
     }
+
     /// <summary>
-    /// Get all the available ports on the specified <paramref name="device"/> starting from <paramref name="startingPort"/>
+    /// Get the first available port on the specified <paramref name="device"/> starting from <paramref name="startingPort"/>
     /// </summary>
-    public static async Task<int> GetAwailablePortAsync(this INatDevice device, int startingPort, CancellationToken cancellationToken = default)
+    public static async Task<int> GetAvailablePortAsync(this INatDevice device, int startingPort, CancellationToken cancellationToken = default)
     {
-        var portArray = await device.GetUsedPortAsync(cancellationToken);
+        var portArray = await device.GetUsedPortsAsync(cancellationToken);
         for (int i = startingPort; i < ushort.MaxValue; i++)
         {
             if (!portArray.Contains(i))
@@ -61,16 +62,16 @@ public static class Extensions
     /// <summary>
     /// Get all used ports on the first found device
     /// </summary>
-    public static async Task<List<int>> GetUsedPortAsync(this INatDiscoverer discoverer, CancellationToken cancellationToken = default)
+    public static async Task<List<int>> GetUsedPortsAsync(this INatDiscoverer discoverer, CancellationToken cancellationToken = default)
     {
         var device = await discoverer.DiscoverDeviceAsync(cancellationToken);
-        return await device.GetUsedPortAsync(cancellationToken);
+        return await device.GetUsedPortsAsync(cancellationToken);
     }
 
     /// <summary>
     /// Get all used ports on the specified <paramref name="device"/>
     /// </summary>
-    public static async Task<List<int>> GetUsedPortAsync(this INatDevice device, CancellationToken cancellationToken = default)
+    public static async Task<List<int>> GetUsedPortsAsync(this INatDevice device, CancellationToken cancellationToken = default)
     {
         var portArray = new List<int>();
 
