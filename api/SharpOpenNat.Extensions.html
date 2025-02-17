@@ -182,6 +182,64 @@
 </h3>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
+    <a href="https://github.com/JeremyAnsel/SharpOpenNat/new/main/apiSpec/new?filename=SharpOpenNat_Extensions_GetAvailablePortAsync_SharpOpenNat_INatDevice_System_Int32_System_Threading_CancellationToken_.md&amp;value=---%0Auid%3A%20SharpOpenNat.Extensions.GetAvailablePortAsync(SharpOpenNat.INatDevice%2CSystem.Int32%2CSystem.Threading.CancellationToken)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/JeremyAnsel/SharpOpenNat/blob/main/SharpOpenNat/SharpOpenNat/Utils/Extensions.cs/#L48">View Source</a>
+  </span>
+  <a id="SharpOpenNat_Extensions_GetAvailablePortAsync_" data-uid="SharpOpenNat.Extensions.GetAvailablePortAsync*"></a>
+  <h4 id="SharpOpenNat_Extensions_GetAvailablePortAsync_SharpOpenNat_INatDevice_System_Int32_System_Threading_CancellationToken_" data-uid="SharpOpenNat.Extensions.GetAvailablePortAsync(SharpOpenNat.INatDevice,System.Int32,System.Threading.CancellationToken)">GetAvailablePortAsync(INatDevice, int, CancellationToken)</h4>
+  <div class="markdown level1 summary"><p>Get the first available port on the specified <code class="paramref">device</code> starting from <code class="paramref">startingPort</code></p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static Task&lt;int&gt; GetAvailablePortAsync(this INatDevice device, int startingPort, CancellationToken cancellationToken = default)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="SharpOpenNat.INatDevice.html">INatDevice</a></td>
+        <td><span class="parametername">device</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></td>
+        <td><span class="parametername">startingPort</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken">CancellationToken</a></td>
+        <td><span class="parametername">cancellationToken</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
     <a href="https://github.com/JeremyAnsel/SharpOpenNat/new/main/apiSpec/new?filename=SharpOpenNat_Extensions_GetAvailablePortAsync_SharpOpenNat_INatDiscoverer_System_Int32_System_Threading_CancellationToken_.md&amp;value=---%0Auid%3A%20SharpOpenNat.Extensions.GetAvailablePortAsync(SharpOpenNat.INatDiscoverer%2CSystem.Int32%2CSystem.Threading.CancellationToken)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
   </span>
   <span class="small pull-right mobile-hide">
@@ -189,7 +247,7 @@
   </span>
   <a id="SharpOpenNat_Extensions_GetAvailablePortAsync_" data-uid="SharpOpenNat.Extensions.GetAvailablePortAsync*"></a>
   <h4 id="SharpOpenNat_Extensions_GetAvailablePortAsync_SharpOpenNat_INatDiscoverer_System_Int32_System_Threading_CancellationToken_" data-uid="SharpOpenNat.Extensions.GetAvailablePortAsync(SharpOpenNat.INatDiscoverer,System.Int32,System.Threading.CancellationToken)">GetAvailablePortAsync(INatDiscoverer, int, CancellationToken)</h4>
-  <div class="markdown level1 summary"><p>Get all the available ports starting from <code class="paramref">startingPort</code> on the first found device</p>
+  <div class="markdown level1 summary"><p>Get the first available port starting from <code class="paramref">startingPort</code> on the first found device</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="declaration">Declaration</h5>
@@ -240,77 +298,19 @@
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/JeremyAnsel/SharpOpenNat/new/main/apiSpec/new?filename=SharpOpenNat_Extensions_GetAwailablePortAsync_SharpOpenNat_INatDevice_System_Int32_System_Threading_CancellationToken_.md&amp;value=---%0Auid%3A%20SharpOpenNat.Extensions.GetAwailablePortAsync(SharpOpenNat.INatDevice%2CSystem.Int32%2CSystem.Threading.CancellationToken)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+    <a href="https://github.com/JeremyAnsel/SharpOpenNat/new/main/apiSpec/new?filename=SharpOpenNat_Extensions_GetUsedPortsAsync_SharpOpenNat_INatDevice_System_Threading_CancellationToken_.md&amp;value=---%0Auid%3A%20SharpOpenNat.Extensions.GetUsedPortsAsync(SharpOpenNat.INatDevice%2CSystem.Threading.CancellationToken)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/JeremyAnsel/SharpOpenNat/blob/main/SharpOpenNat/SharpOpenNat/Utils/Extensions.cs/#L47">View Source</a>
+    <a href="https://github.com/JeremyAnsel/SharpOpenNat/blob/main/SharpOpenNat/SharpOpenNat/Utils/Extensions.cs/#L74">View Source</a>
   </span>
-  <a id="SharpOpenNat_Extensions_GetAwailablePortAsync_" data-uid="SharpOpenNat.Extensions.GetAwailablePortAsync*"></a>
-  <h4 id="SharpOpenNat_Extensions_GetAwailablePortAsync_SharpOpenNat_INatDevice_System_Int32_System_Threading_CancellationToken_" data-uid="SharpOpenNat.Extensions.GetAwailablePortAsync(SharpOpenNat.INatDevice,System.Int32,System.Threading.CancellationToken)">GetAwailablePortAsync(INatDevice, int, CancellationToken)</h4>
-  <div class="markdown level1 summary"><p>Get all the available ports on the specified <code class="paramref">device</code> starting from <code class="paramref">startingPort</code></p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static Task&lt;int&gt; GetAwailablePortAsync(this INatDevice device, int startingPort, CancellationToken cancellationToken = default)</code></pre>
-  </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="SharpOpenNat.INatDevice.html">INatDevice</a></td>
-        <td><span class="parametername">device</span></td>
-        <td></td>
-      </tr>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></td>
-        <td><span class="parametername">startingPort</span></td>
-        <td></td>
-      </tr>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken">CancellationToken</a></td>
-        <td><span class="parametername">cancellationToken</span></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a>&gt;</td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/JeremyAnsel/SharpOpenNat/new/main/apiSpec/new?filename=SharpOpenNat_Extensions_GetUsedPortAsync_SharpOpenNat_INatDevice_System_Threading_CancellationToken_.md&amp;value=---%0Auid%3A%20SharpOpenNat.Extensions.GetUsedPortAsync(SharpOpenNat.INatDevice%2CSystem.Threading.CancellationToken)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/JeremyAnsel/SharpOpenNat/blob/main/SharpOpenNat/SharpOpenNat/Utils/Extensions.cs/#L73">View Source</a>
-  </span>
-  <a id="SharpOpenNat_Extensions_GetUsedPortAsync_" data-uid="SharpOpenNat.Extensions.GetUsedPortAsync*"></a>
-  <h4 id="SharpOpenNat_Extensions_GetUsedPortAsync_SharpOpenNat_INatDevice_System_Threading_CancellationToken_" data-uid="SharpOpenNat.Extensions.GetUsedPortAsync(SharpOpenNat.INatDevice,System.Threading.CancellationToken)">GetUsedPortAsync(INatDevice, CancellationToken)</h4>
+  <a id="SharpOpenNat_Extensions_GetUsedPortsAsync_" data-uid="SharpOpenNat.Extensions.GetUsedPortsAsync*"></a>
+  <h4 id="SharpOpenNat_Extensions_GetUsedPortsAsync_SharpOpenNat_INatDevice_System_Threading_CancellationToken_" data-uid="SharpOpenNat.Extensions.GetUsedPortsAsync(SharpOpenNat.INatDevice,System.Threading.CancellationToken)">GetUsedPortsAsync(INatDevice, CancellationToken)</h4>
   <div class="markdown level1 summary"><p>Get all used ports on the specified <code class="paramref">device</code></p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="declaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static Task&lt;List&lt;int&gt;&gt; GetUsedPortAsync(this INatDevice device, CancellationToken cancellationToken = default)</code></pre>
+    <pre><code class="lang-csharp hljs">public static Task&lt;List&lt;int&gt;&gt; GetUsedPortsAsync(this INatDevice device, CancellationToken cancellationToken = default)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-condensed">
@@ -351,19 +351,19 @@
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/JeremyAnsel/SharpOpenNat/new/main/apiSpec/new?filename=SharpOpenNat_Extensions_GetUsedPortAsync_SharpOpenNat_INatDiscoverer_System_Threading_CancellationToken_.md&amp;value=---%0Auid%3A%20SharpOpenNat.Extensions.GetUsedPortAsync(SharpOpenNat.INatDiscoverer%2CSystem.Threading.CancellationToken)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+    <a href="https://github.com/JeremyAnsel/SharpOpenNat/new/main/apiSpec/new?filename=SharpOpenNat_Extensions_GetUsedPortsAsync_SharpOpenNat_INatDiscoverer_System_Threading_CancellationToken_.md&amp;value=---%0Auid%3A%20SharpOpenNat.Extensions.GetUsedPortsAsync(SharpOpenNat.INatDiscoverer%2CSystem.Threading.CancellationToken)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/JeremyAnsel/SharpOpenNat/blob/main/SharpOpenNat/SharpOpenNat/Utils/Extensions.cs/#L64">View Source</a>
+    <a href="https://github.com/JeremyAnsel/SharpOpenNat/blob/main/SharpOpenNat/SharpOpenNat/Utils/Extensions.cs/#L65">View Source</a>
   </span>
-  <a id="SharpOpenNat_Extensions_GetUsedPortAsync_" data-uid="SharpOpenNat.Extensions.GetUsedPortAsync*"></a>
-  <h4 id="SharpOpenNat_Extensions_GetUsedPortAsync_SharpOpenNat_INatDiscoverer_System_Threading_CancellationToken_" data-uid="SharpOpenNat.Extensions.GetUsedPortAsync(SharpOpenNat.INatDiscoverer,System.Threading.CancellationToken)">GetUsedPortAsync(INatDiscoverer, CancellationToken)</h4>
+  <a id="SharpOpenNat_Extensions_GetUsedPortsAsync_" data-uid="SharpOpenNat.Extensions.GetUsedPortsAsync*"></a>
+  <h4 id="SharpOpenNat_Extensions_GetUsedPortsAsync_SharpOpenNat_INatDiscoverer_System_Threading_CancellationToken_" data-uid="SharpOpenNat.Extensions.GetUsedPortsAsync(SharpOpenNat.INatDiscoverer,System.Threading.CancellationToken)">GetUsedPortsAsync(INatDiscoverer, CancellationToken)</h4>
   <div class="markdown level1 summary"><p>Get all used ports on the first found device</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="declaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static Task&lt;List&lt;int&gt;&gt; GetUsedPortAsync(this INatDiscoverer discoverer, CancellationToken cancellationToken = default)</code></pre>
+    <pre><code class="lang-csharp hljs">public static Task&lt;List&lt;int&gt;&gt; GetUsedPortsAsync(this INatDiscoverer discoverer, CancellationToken cancellationToken = default)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-condensed">
