@@ -18,7 +18,11 @@
           "relative_path": "api/SharpOpenNat.Extensions.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "SharpOpenNat.Extensions",
+      "Summary": "<p sourcefile=\"api/SharpOpenNat.Extensions.yml\" sourcestartlinenumber=\"1\">Extension Methods for the exposed interfaces</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -28,7 +32,11 @@
           "relative_path": "api/SharpOpenNat.INatDevice.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "SharpOpenNat.INatDevice",
+      "Summary": "<p sourcefile=\"api/SharpOpenNat.INatDevice.yml\" sourcestartlinenumber=\"1\">Represents a NAT device and provides access to the operation set that allows\nopen (forward) ports, close ports and get the externa (visible) IP address.</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -38,7 +46,11 @@
           "relative_path": "api/SharpOpenNat.INatDiscoverer.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "SharpOpenNat.INatDiscoverer",
+      "Summary": "<p sourcefile=\"api/SharpOpenNat.INatDiscoverer.yml\" sourcestartlinenumber=\"1\">Discovers NAT device;</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -48,7 +60,11 @@
           "relative_path": "api/SharpOpenNat.Mapping.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "SharpOpenNat.Mapping",
+      "Summary": "<p sourcefile=\"api/SharpOpenNat.Mapping.yml\" sourcestartlinenumber=\"1\">Represents a port forwarding entry in the NAT translation table.</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -58,7 +74,11 @@
           "relative_path": "api/SharpOpenNat.MappingException.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "SharpOpenNat.MappingException",
+      "Summary": ""
     },
     {
       "type": "ManagedReference",
@@ -68,7 +88,11 @@
           "relative_path": "api/SharpOpenNat.MappingLifetime.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "SharpOpenNat.MappingLifetime",
+      "Summary": "<p sourcefile=\"api/SharpOpenNat.MappingLifetime.yml\" sourcestartlinenumber=\"1\">The kind of lifetime</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -78,7 +102,11 @@
           "relative_path": "api/SharpOpenNat.NatDeviceNotFoundException.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "SharpOpenNat.NatDeviceNotFoundException",
+      "Summary": ""
     },
     {
       "type": "ManagedReference",
@@ -88,7 +116,11 @@
           "relative_path": "api/SharpOpenNat.OpenNat.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "SharpOpenNat.OpenNat",
+      "Summary": ""
     },
     {
       "type": "ManagedReference",
@@ -98,7 +130,11 @@
           "relative_path": "api/SharpOpenNat.PortMapper.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "SharpOpenNat.PortMapper",
+      "Summary": "<p sourcefile=\"api/SharpOpenNat.PortMapper.yml\" sourcestartlinenumber=\"1\">Protocol that should be used for searching a NAT device.</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -108,7 +144,11 @@
           "relative_path": "api/SharpOpenNat.Protocol.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "SharpOpenNat.Protocol",
+      "Summary": "<p sourcefile=\"api/SharpOpenNat.Protocol.yml\" sourcestartlinenumber=\"1\">Protocol to allow/disallow</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -118,7 +158,11 @@
           "relative_path": "api/SharpOpenNat.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "SharpOpenNat",
+      "Summary": null
     },
     {
       "type": "Conceptual",
