@@ -132,7 +132,10 @@ internal static class StreamExtensions
             timeoutCancellationTokenSource.Cancel();
             return await task;
         }
-        throw new TimeoutException(
+		//have to attach to the task to observe the exception later, or it will be thrown on finalizer thread
+		_ = task.ContinueWith(static t => { var ignored = t.Exception; }, TaskContinuationOptions.OnlyOnFaulted);
+
+		throw new TimeoutException(
             "The operation has timed out. The network is broken, router has gone or is too busy.");
 #endif
     }
